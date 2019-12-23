@@ -3,11 +3,9 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
-class Home extends Component {
+class Login extends Component {
   state = {
-    books: [],
-    condition:false,
-    state: false
+    books: []
   };
 
   render() {
@@ -15,8 +13,9 @@ class Home extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron condition={this.state.condition} />
-            
+            <Jumbotron>
+              <h1>Log In Page</h1>
+            </Jumbotron>
           </Col>
         </Row>
       </Container>
@@ -24,4 +23,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Login;

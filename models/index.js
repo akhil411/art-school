@@ -1,3 +1,3 @@
 module.exports = {
-  School: require("./school")
+  School: require("./User")
 };
