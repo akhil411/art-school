@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../layout/Grid";
+import { Col, Row, Container } from "../../layout/Grid";
 import "./style.css";
-import {NewsContext} from '../../pages/Home'
+import {NewsContext} from '../../../pages/Home'
 
 class News extends Component {
   render() {
@@ -13,16 +12,17 @@ class News extends Component {
           <Col size="md-10 md-offset-1">
             <article>
             <NewsContext.Consumer>
-                {value => ( value.weather ? (
+                {value => ( value.news.length ? (
+                    <ul>
+                        {value.news.map(news => (
+                        <li>
                             <strong>
-                                <h1>Sydney</h1>
-                                {value.weather.temp_c} &#8451;
-                                <br></br>
-                                {value.weather.condition.text}
-                                <br></br>
-                                <img src={value.weather.condition.icon}></img>
+                                {news.title}
                                 <br></br>
                             </strong>
+                        </li>
+                        ))}
+                    </ul>
                     ) : (
                     <h3>No Results to Display</h3>
                     )

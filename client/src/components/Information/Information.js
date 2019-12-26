@@ -2,8 +2,8 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import "./style.css";
-import News from '../News/News';
-import Weather from '../Weather/Weather'
+import News from './News/News';
+import Weather from './Weather/Weather'
 
 function Information(props) {
   return (
