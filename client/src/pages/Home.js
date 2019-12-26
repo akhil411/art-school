@@ -4,6 +4,7 @@ import HeroImage from "./../components/HeroImage/HeroImage";
 import { Col, Row, Container } from "../components/layout/Grid";
 import Information from "./../components/Information/Information";
 import API from "../utils/API";
+import { Link, withRouter } from "react-router-dom";
 
 
 export const NewsContext = React.createContext();
@@ -52,6 +53,11 @@ class Home extends Component {
                 </NewsContext.Provider>
             </Col>
             <Col size="md-6 login"> 
+            <div>
+                            <Link to="/register">
+                                <h5>Register User</h5>
+                            </Link>
+                        </div>
                 <Login history= {this.props.history} />
             </Col>
         </Row>

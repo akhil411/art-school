@@ -12,5 +12,11 @@ export default {
     },
     getWeather: function(query) {
         return   axios.get("/api/weather/weather", { params: { q: query } });
+    },
+    getRoles: function() {
+        return axios.get("/api/roles/roles");
+    },
+    getUsers: function() {
+        return axios.get("/api/users/users");
     }
 };

@@ -7,6 +7,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
 // Register User
 export const registerUser = (userData, history) => dispatch => {
+  console.log(userData);
   API.registerUser(userData)
     .then(res => history.push("/"))
     .catch(err =>
@@ -25,7 +26,6 @@ export const loginUser = userData => dispatch => {
 
       // Set token to localStorage
       const { token } = res.data;
-      console.log("hello"+ token);
       localStorage.setItem("jwtToken", token);
       // Set token to Auth header
       setAuthToken(token);
