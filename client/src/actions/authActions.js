@@ -2,12 +2,13 @@ import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 import API from "../utils/API";
 
+
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
 // Register User
 export const registerUser = (userData, history) => dispatch => {
   API.registerUser(userData)
-    .then(res => history.push("/login"))
+    .then(res => history.push("/"))
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
@@ -24,6 +25,7 @@ export const loginUser = userData => dispatch => {
 
       // Set token to localStorage
       const { token } = res.data;
+      console.log("hello"+ token);
       localStorage.setItem("jwtToken", token);
       // Set token to Auth header
       setAuthToken(token);

@@ -1,0 +1,7 @@
+.hero-image {
+    background-image: url("./school-hero-image.jpg");
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
