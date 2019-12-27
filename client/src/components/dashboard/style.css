@@ -10,3 +10,20 @@
 .user-name {
     margin-top:20px;
 }
+
+.choose-file {
+    float:left;
+}
+
+.submit-button {
+    float: right;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.modal-content form {
+    margin: 25px;
+}
+

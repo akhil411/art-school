@@ -16,7 +16,7 @@ const UserSchema = new Schema({
     required: true
   },
   role: {
-    type: String,
+    type: Number,
     required: true
   },
   date: {
@@ -26,3 +26,14 @@ const UserSchema = new Schema({
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
+
+const Admin = new User({name:"admin", email:"admin@school.com", password:'$2a$10$4GhZYSgVoiJ.uGs1/wMdqeNo9xtodW6oKleAP2j/0/a/pjXgqfBb2', role:1 })
+
+User.find({name:"admin"})
+        .then(dbModel => {
+          if(dbModel == ""){
+            Admin.save();
+          }
+        })
+
+;

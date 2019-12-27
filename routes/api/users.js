@@ -11,4 +11,7 @@ router.route("/users")
   router.route("/login")
   .post(usersController.login);
 
+  router.route("/users/:id")
+  .get(usersController.findbyID);
+
 module.exports = router;

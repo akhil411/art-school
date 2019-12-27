@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const RolesSchema = new Schema({
-  _id: {
-    type: Number,
+  value: {
+    type:String ,
   },
   name: {
     type: String,
@@ -13,7 +13,12 @@ const RolesSchema = new Schema({
 
 const Roles = mongoose.model("roles", RolesSchema);
 
-Roles.create({_id: 1, name: 'admin'}, {_id: 2, name: 'teacher'}, {_id: 3, name: 'student'},{_id: 4, name: 'parent'},{_id: 5, name: 'staff'}, function(err, doc) {
-});
-
+Roles.find({name:"admin"})
+        .then(dbModel => {
+          if(dbModel == ""){
+            Roles.create({value: "1", name: 'admin'}, {value: "2", name: 'teacher'}, {value: "3", name: 'student'},{value: "4", name: 'parent'},{value: "5", name: 'staff'}, function(err, doc) {
+            });
+          }
+        })
+        
 module.exports = Roles;

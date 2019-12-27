@@ -8,7 +8,7 @@ const passport = require("passport");
 // Load input validation
 const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
-const db = require("../models");
+const db = require("./../models");
 const axios = require("axios");
 
 // Defining methods for the booksController
@@ -103,5 +103,11 @@ module.exports = {
             }
           });
         });
+    },
+    findbyID: function(req, res) {
+      db.User
+        .find({ role:req.params.id })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     }
 }
