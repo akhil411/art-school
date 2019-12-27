@@ -144,7 +144,7 @@ class Register extends Component {
                     <select id="role" error={errors.role} onChange={this.userSelection} value={this.state.value}>
                         <option>Select a Role</option>
                         {this.state.roles.map(data => (
-                            <option value={data._id}>{data.name}</option>
+                            <option value={data.value}>{data.name}</option>
                         ))}
                     </select>
                     </label>

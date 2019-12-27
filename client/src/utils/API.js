@@ -18,5 +18,14 @@ export default {
     },
     getUsers: function() {
         return axios.get("/api/users/users");
+    },
+    getUserType: function(id) {
+        return axios.get("/api/users/users/" + id);
+      },
+    createPosts: function(postdata) {
+        return   axios.post("/api/posts/posts", postdata);
+    },
+    getPosts: function() {
+        return   axios.get("/api/posts/posts");
     }
 };
