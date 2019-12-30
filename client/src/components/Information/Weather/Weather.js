@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row, Container } from "../../layout/Grid";
 import "./style.css";
-import {NewsContext} from '../../../pages/Home'
+import {NewsContext} from '../../Dashboard/Dashboard'
 
 class News extends Component {
   render() {

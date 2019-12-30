@@ -1,0 +1,33 @@
+.announcements-information {
+    width: 900px;
+    margin: auto;
+    padding-top: 100px;
+}
+
+/* .react-tabs__tab {
+    background-color: none;
+    margin-right:50px;
+    margin-left:50px;
+    padding: 20px;
+    border-radius: none;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+    border: none;
+}
+
+.react-tabs__tab--selected {
+    background-color: none;
+    color: white;
+    border-color:transparent;
+    border-radius: 0;
+    background: none;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.react-tabs__tab-list {
+    border-bottom: none;
+    margin: 0;
+    text-align: center;
+} */

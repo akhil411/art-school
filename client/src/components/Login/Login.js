@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
+import "./style.css";
 
 class Login extends Component {
   constructor() {
@@ -55,13 +56,8 @@ class Login extends Component {
 
     return (
       <div className="login-box">
-        <div className="login-heading">
-            <h4>
-            <b>Login</b> below
-            </h4>
-        </div>
         <form noValidate onSubmit={this.onSubmit}>
-            <div className="input-field col s12 input-email">
+            <div className="input-field input-email">
             <input
                 onChange={this.onChange}
                 value={this.state.email}
@@ -79,7 +75,7 @@ class Login extends Component {
                 {errors.emailnotfound}
             </span>
             </div>
-            <div className="input-field col s12 input-password">
+            <div className="input-field input-password">
             <input
                 onChange={this.onChange}
                 value={this.state.password}
@@ -97,16 +93,15 @@ class Login extends Component {
                 {errors.passwordincorrect}
             </span>
             </div>
-            <div className="col s12 login-button">
+            <div className="login-button-section">
             <button
                 style={{
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
                 }}
                 type="submit"
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                className="login-button"
             >
                 Login
             </button>

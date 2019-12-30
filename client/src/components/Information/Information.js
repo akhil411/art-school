@@ -10,14 +10,10 @@ function Information(props) {
     <div>
         <Tabs>
             <TabList>
-                <Tab>Announcements</Tab>
                 <Tab>News</Tab>
                 <Tab>Weather</Tab>
             </TabList>
 
-            <TabPanel>
-                <h2>Any content 1</h2>
-            </TabPanel>
             <TabPanel>
                 <News />
             </TabPanel>

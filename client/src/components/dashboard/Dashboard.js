@@ -5,7 +5,10 @@ import { logoutUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
 import "./style.css";
 import Posts from "./Posts/Posts";
-import API from './../../utils/API'
+import API from './../../utils/API';
+import Information from './../Information/Information';
+
+export const NewsContext = React.createContext();
 
 class Dashboard extends Component {
 
@@ -13,9 +16,33 @@ class Dashboard extends Component {
         super();
         this.state = {
           text: "",
-          user:""
+          user:"",
+          news: [],
+          weather:[]
         };
       }
+
+
+      componentDidMount() {
+        this.loadNews();
+        this.loadWeather();
+      }
+    
+      loadNews = () => {
+        API.getNews()
+          .then(res =>
+            this.setState({ news: res.data})
+          )
+          .catch(err => console.log(err));
+      };
+
+      loadWeather = () => {
+        API.getWeather()
+          .then(res =>
+            this.setState({ weather: res.data})
+          )
+          .catch(err => console.log(err));
+      };
 
 
       onChange = e => {
@@ -43,11 +70,9 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
   const  role  = user.role;
     return (
-        <div className="container">
+        <div className="dashboard-container">
             <div className="row row-main">
-                <div className="col-md-10">
-                <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                     <div className="left-section">
                         <div className="icon">
                            <img src="./assets/images/icon.png"></img>
@@ -63,8 +88,8 @@ class Dashboard extends Component {
                                 <Link to="/dashboard/manage-users">
                                   <h5>Manage Users</h5>
                                 </Link>
-                                <Link to="/register">
-                                  <h5>View Reports</h5>
+                                <Link to="/">
+                                  <h5>Manage Website</h5>
                                 </Link>
                               </div>
                             );
@@ -88,15 +113,10 @@ class Dashboard extends Component {
                             return (
                               <div>
                                 <Link to="/register">
-                                  <h5>View Reports</h5>
-                                </Link>
-                              </div>
-                            );
-                          case 5:
-                            return (
-                              <div>
-                                <Link to="/register">
                                   <h5>Manage Reports</h5>
+                                </Link>
+                                <Link to="/register">
+                                  <h5>Manage Website</h5>
                                 </Link>
                               </div>
                             );
@@ -122,25 +142,16 @@ class Dashboard extends Component {
                         </button>
                         </div>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-md-7">
                         <div className="blog-submit">
-                            <div className="card" data-toggle="modal" data-target="#exampleModal">
+                            <div className="card">
                                 <div className="card-body">
-                                        <textarea className="form-control" rows="2" id="comment" placeholder="Whats up!"></textarea>
-                                        <hr></hr>
-                                        <button className="choose-file">Choose File</button><button className="submit-button">Submit</button>
-                                </div>
-                            </div>
-                            <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div className="modal-dialog" role="document">
-                                    <div className="modal-content">
-                                        <form onSubmit={this.onSubmit}>
+                                    <form onSubmit={this.onSubmit}>
                                             <textarea onChange={this.onChange} value={this.state.text} className="form-control" rows="4" id="comment" placeholder="Whats up!"></textarea>
                                             <hr></hr>
-                                            {/* <input type="file" name="pic" accept="image/*"></input> */}
+                                            <input type="file" name="pic" accept="image/*"></input>
                                             <input type="submit"></input>
-                                        </form>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -148,13 +159,18 @@ class Dashboard extends Component {
                             <Posts username={user.name}/>
                         </div>
                     </div>
+                    <div className="col-md-3">
+                            <NewsContext.Provider value={this.state}>
+								<Information />
+							</NewsContext.Provider>
                     </div>
                 </div>
             </div>
-        </div>
     );
   }
 }
+
+Dashboard.contextType = NewsContext;
 
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,

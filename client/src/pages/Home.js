@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import Login from "./../components/Login/Login";
 import HeroImage from "./../components/HeroImage/HeroImage";
-import { Col, Row, Container } from "../components/layout/Grid";
-import Information from "./../components/Information/Information";
 import API from "../utils/API";
-import { Link, withRouter } from "react-router-dom";
-
-
-export const NewsContext = React.createContext();
 
 class Home extends Component {
     state = {
@@ -38,34 +32,16 @@ class Home extends Component {
 
   render() {
     return (
-      <Container fluid>
-        <Row>
-            <Col size="md-12">
-                <HeroImage />
-            </Col>
-        </Row>
-        <Row>
-            <Col size="md-6"> 
-                <NewsContext.Provider value={this.state}>
-                    <div>
-                        <Information />
-                    </div>
-                </NewsContext.Provider>
-            </Col>
-            <Col size="md-6 login"> 
+        <div className="homepage-content">
             <div>
-                            <Link to="/register">
-                                <h5>Register User</h5>
-                            </Link>
-                        </div>
+                <HeroImage />
+            </div>
+            <div className="login-section">
                 <Login history= {this.props.history} />
-            </Col>
-        </Row>
-      </Container>
+            </div>
+        </div>
     );
   };
 };
-
-Home.contextType = NewsContext;
 
 export default Home;
