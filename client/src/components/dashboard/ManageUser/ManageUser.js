@@ -43,7 +43,7 @@ class ManageUser extends Component {
  
   render() {
     return (
-        <div>
+        <div className="manage-users">
                                           <div>
                                 <Link to="/dashboard">
                                   <h5>Back to your Dashboard</h5>

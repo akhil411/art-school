@@ -16,7 +16,7 @@ const Roles = mongoose.model("roles", RolesSchema);
 Roles.find({name:"admin"})
         .then(dbModel => {
           if(dbModel == ""){
-            Roles.create({value: "1", name: 'admin'}, {value: "2", name: 'teacher'}, {value: "3", name: 'student'},{value: "4", name: 'parent'},{value: "5", name: 'staff'}, function(err, doc) {
+            Roles.create({value: "1", name: 'admin'}, {value: "2", name: 'teacher'}, {value: "3", name: 'student'},{value: "4", name: 'staff'}, function(err, doc) {
             });
           }
         })

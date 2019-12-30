@@ -1,0 +1,15 @@
+.login-box form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+}
+
+.login-box form .input-field,.login-box form .input-password {
+    margin-right:20px
+}
+
+.login-box form .login-button-section button {
+    margin: 0;
+}

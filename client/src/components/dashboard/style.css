@@ -1,6 +1,7 @@
 .row-main {
     text-align: center;
     justify-content: center;
+    margin: 0 !important;
 }
 .icon img {
     width:100px;
@@ -27,3 +28,17 @@
     margin: 25px;
 }
 
+.dashboard-container {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+    background: rgba(0, 0, 0, 0.2) url("./dashborad-image.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: overlay;
+    width: 100%;
+    padding-top: 100px;
+    min-height:100vh;
+}
