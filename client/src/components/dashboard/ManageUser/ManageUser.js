@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import "./style.css";
 import API from './../../../utils/API';
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { logoutUser } from "../../../actions/authActions";
 
 class ManageUser extends Component {
 
@@ -15,8 +18,13 @@ class ManageUser extends Component {
     }
 
   componentDidMount() {
-    this.loadRoles();
-    this.loadUsers("");
+    if(this.props.auth.user.role !== 1) {
+      this.props.history.push("/dashboard");
+    } else {
+        this.loadRoles();
+        this.loadUsers("");
+    }
+
   }
 
   loadRoles = () => {
@@ -81,4 +89,17 @@ class ManageUser extends Component {
   }
 }
 
-export default ManageUser;
+// export default ManageUser;
+ManageUser.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser }
+)(ManageUser);

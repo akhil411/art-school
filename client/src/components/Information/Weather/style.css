@@ -1,0 +1,8 @@
+.react-tabs__tab-panel {
+    color: white;
+    height: auto;
+}
+
+.react-tabs__tab-panel img {
+    width: 100px;
+}

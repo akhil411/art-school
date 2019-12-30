@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import { Col, Row, Container } from "../../layout/Grid";
 import "./style.css";
 import {NewsContext} from '../../Dashboard/Dashboard'
 
 class News extends Component {
   render() {
     return (
-      
-      <Container fluid>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
             <NewsContext.Consumer>
                 {value => ( value.news.length ? (
                     <ul>
@@ -28,10 +22,6 @@ class News extends Component {
                     )
                 )}
             </NewsContext.Consumer>
-            </article>
-          </Col>
-        </Row>
-      </Container>
     );
   }
 }

@@ -14,20 +14,44 @@
     color: white;
     font-size: 20px;
     border: none;
-}
+} */
 
 .react-tabs__tab--selected {
-    background-color: none;
-    color: white;
-    border-color:transparent;
+    border-color: #28334aff;
+    color: gold;
     border-radius: 0;
-    background: none;
+    background-color: #28334aff;
     font-size: 30px;
-    font-weight: bold;
+
 }
 
 .react-tabs__tab-list {
     border-bottom: none;
     margin: 0;
-    text-align: center;
-} */
+    /* text-align: left; */
+    color: whitesmoke;
+} 
+
+.information-content {
+    position: fixed;
+    margin-top: 50px;
+    width: 365px;
+    margin-right: 20px;
+    background-color: #28334aff;
+    border-radius: 10px;
+
+}
+
+.react-tabs__tab-panel ul li {
+    color: white;
+    text-align: left;
+    margin-top: 10px;
+    padding-right: 20px;
+    font-weight: normal;
+    text-decoration: underline;
+
+}
+
+.react-tabs__tab-panel ul {
+    list-style: none;
+}

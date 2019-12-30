@@ -7,25 +7,27 @@ import "./style.css";
 import Posts from "./Posts/Posts";
 import API from './../../utils/API';
 import Information from './../Information/Information';
+import Avatar from '@material-ui/core/Avatar';
 
 export const NewsContext = React.createContext();
 
 class Dashboard extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
           text: "",
           user:"",
           news: [],
-          weather:[]
+          weather:[],
+          posts:[]
         };
-      }
+  }
 
-
-      componentDidMount() {
+  componentDidMount() {
         this.loadNews();
         this.loadWeather();
+        this.loadPosts();
       }
     
       loadNews = () => {
@@ -58,6 +60,16 @@ class Dashboard extends Component {
         .catch(err => console.log(err));
       };
 
+      loadPosts = () => {
+        API.getPosts()
+          .then(res =>{{
+            console.log(res.data)
+            this.setState({ posts: res.data})};
+        }
+          )
+          .catch(err => console.log(err));
+      };
+
 
 
 
@@ -68,14 +80,15 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
-  const  role  = user.role;
+    const  role  = user.role;
+    
     return (
         <div className="dashboard-container">
             <div className="row row-main">
                     <div className="col-md-2">
                     <div className="left-section">
                         <div className="icon">
-                           <img src="./assets/images/icon.png"></img>
+                           <Avatar className="avatar-icon">{user.name.charAt(0).toUpperCase()}{user.name.charAt(1).toUpperCase()}</Avatar>
                         </div>
                         <div className="user-name">
                            <h4>Hi, {user.name.split(" ")[0]}</h4>
@@ -142,7 +155,7 @@ class Dashboard extends Component {
                         </button>
                         </div>
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-md-6">
                         <div className="blog-submit">
                             <div className="card">
                                 <div className="card-body">
@@ -156,13 +169,13 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         <div>
-                            <Posts username={user.name}/>
+                            <Posts username={user.name} posts={this.state.posts}/>
                         </div>
                     </div>
-                    <div className="col-md-3">
-                            <NewsContext.Provider value={this.state}>
-								<Information />
-							</NewsContext.Provider>
+                    <div className="col-md-4">
+                        <NewsContext.Provider value={this.state}>
+                            <Information />
+                        </NewsContext.Provider>
                     </div>
                 </div>
             </div>

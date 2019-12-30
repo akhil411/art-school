@@ -7,7 +7,7 @@ import Weather from './Weather/Weather'
 
 function Information(props) {
   return (
-    <div>
+    <div className="information-content">
         <Tabs>
             <TabList>
                 <Tab>News</Tab>
