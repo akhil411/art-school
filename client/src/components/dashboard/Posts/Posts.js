@@ -1,7 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
-import API from './../../../utils/API';
-import { Link } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -56,19 +54,19 @@ export default function Posts(props) {
     <Card >
       <CardHeader
         avatar={
-        <Avatar aria-label="recipe" className={classes.avatar}>{post.user.charAt(0).toUpperCase()}</Avatar>
+        <Avatar aria-label="recipe" className={classes.avatar}>{post.user.name.charAt(0).toUpperCase()}</Avatar>
         }
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title= {post.user}
+        title= {post.user.name}
         subheader="September 14, 2016"
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
+        image={post.upload.url}
         title="Paella dish"
       />
       <CardContent>

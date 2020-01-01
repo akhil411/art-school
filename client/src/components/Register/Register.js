@@ -26,8 +26,10 @@ class Register extends Component {
 
   loadRoles = () => {
     API.getRoles()
-      .then(res =>
+      .then(res =>{
         this.setState({ roles: res.data})
+        console.log(this.state.roles)
+      }
       )
       .catch(err => console.log(err));
   };
@@ -143,8 +145,8 @@ class Register extends Component {
                     <label>
                     <select id="role" error={errors.role} onChange={this.userSelection} value={this.state.value}>
                         <option>Select a Role</option>
-                        {this.state.roles.map(data => (
-                            <option value={data.value}>{data.name}</option>
+                        {this.state.roles.map(role => (
+                            <option value={role._id}>{role.name}</option>
                         ))}
                     </select>
                     </label>

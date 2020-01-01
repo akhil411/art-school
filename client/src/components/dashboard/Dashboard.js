@@ -16,67 +16,121 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          text: "",
-          user:"",
-          news: [],
-          weather:[],
-          posts:[]
+            text: "",
+            user: "",
+            news: [],
+            weather: [],
+            posts: [],
+            selectedFile: ""
         };
-  }
+    }
 
-  componentDidMount() {
+    componentDidMount() {
         this.loadNews();
         this.loadWeather();
         this.loadPosts();
-      }
+    }
     
-      loadNews = () => {
+    loadNews = () => {
         API.getNews()
-          .then(res =>
+            .then(res =>
             this.setState({ news: res.data})
-          )
-          .catch(err => console.log(err));
-      };
+            )
+            .catch(err => console.log(err));
+    };
 
-      loadWeather = () => {
+    loadWeather = () => {
         API.getWeather()
-          .then(res =>
+            .then(res =>
             this.setState({ weather: res.data})
-          )
-          .catch(err => console.log(err));
-      };
+            )
+            .catch(err => console.log(err));
+    };
 
+    onTextChange = e => {
+        this.setState({text:e.target.value});
+    }
 
-      onChange = e => {
-        this.setState({ text: e.target.value });
-      };
+    onFileChange = e => {
+        this.setState({selectedFile:e.target.files[0]});
+    };
 
     onSubmit = e => {
         e.preventDefault();
-        API.createPosts({text:this.state.text, user:this.props.auth.user.name})
-        .then(res =>
-            window.location.reload()
-        )
-        .catch(err => console.log(err));
-      };
-
-      loadPosts = () => {
-        API.getPosts()
-          .then(res =>{{
-            console.log(res.data)
-            this.setState({ posts: res.data})};
+        if (this.state.selectedFile) {
+            this.singleFileUploadHandler();
+        } else {
+            this.createPost();
         }
-          )
-          .catch(err => console.log(err));
       };
 
+    createPost = (imageDetails = null) => {
+        const imageName = imageDetails ? imageDetails.image : null;
+        const imageUrl = imageDetails ? imageDetails.location : null;
+        API.createPosts({text:this.state.text, user:this.props.auth.user.id, name:imageName, url:imageUrl})
+            .then(res =>
+                window.location.reload()
+            )
+            .catch(err => console.log(err));
+    }
 
+    loadPosts = () => {
+        API.getPosts()
+            .then(res =>{
+            this.setState({ posts: res.data});
+        })
+        .catch(err => console.log(err));
+    };
 
+    onLogoutClick = e => {
+        e.preventDefault();
+        this.props.logoutUser();
+    };
 
-  onLogoutClick = e => {
-    e.preventDefault();
-    this.props.logoutUser();
+  singleFileUploadHandler = (  ) => {
+    console.log(this.state.selectedFile)
+    console.log(this.state.selectedFile.name)
+    const data = new FormData();
+  // If file selected
+    if ( this.state.selectedFile ) {
+  data.append( 'image', this.state.selectedFile, this.state.selectedFile.name );
+  API.fileUpload( data, {
+      headers: {
+       'accept': 'application/json',
+       'Accept-Language': 'en-US,en;q=0.8',
+       'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
+      }
+     })
+      .then( ( response ) => {
+  if ( 200 === response.status ) {
+        // If file size is larger than expected.
+        if( response.data.error ) {
+         if ( 'LIMIT_FILE_SIZE' === response.data.error.code ) {
+          // this.ocShowAlert( 'Max size: 2MB', 'red' );
+         } else {
+          console.log( response.data );
+  // If not the given file type
+          // this.ocShowAlert( response.data.error, 'red' );
+         }
+        } else {
+         // Success
+         let imageDetails = response.data;
+         console.log( 'fileName', imageDetails );
+         this.createPost(imageDetails);
+        //  this.ocShowAlert( 'Filefi Uploaded', '#3089cf' );
+        }
+       }
+      }).catch( ( error ) => {
+      // If another error
+      // this.ocShowAlert( error, 'red' );
+     });
+    } else {
+     // if file not selected throw error
+    //  this.ocShowAlert( 'Please upload file', 'red' );
+    }
   };
+
+
 
   render() {
     const { user } = this.props.auth;
@@ -95,7 +149,7 @@ class Dashboard extends Component {
                         </div>
                         {(() => {
                         switch (role) {
-                          case 1:
+                          case "admin":
                             return (
                               <div>
                                 <Link to="/dashboard/manage-users">
@@ -106,7 +160,7 @@ class Dashboard extends Component {
                                 </Link>
                               </div>
                             );
-                          case 2:
+                          case "teacher":
                             return (
                               <div>
                                 <Link to="/register">
@@ -114,7 +168,7 @@ class Dashboard extends Component {
                                 </Link>
                               </div>
                             );
-                          case 3:
+                          case "student":
                             return (
                               <div>
                                 <Link to="/register">
@@ -122,7 +176,7 @@ class Dashboard extends Component {
                                 </Link>
                               </div>
                             );
-                          case 4:
+                          case "staff":
                             return (
                               <div>
                                 <Link to="/register">
@@ -160,9 +214,9 @@ class Dashboard extends Component {
                             <div className="card">
                                 <div className="card-body">
                                     <form onSubmit={this.onSubmit}>
-                                            <textarea onChange={this.onChange} value={this.state.text} className="form-control" rows="4" id="comment" placeholder="Whats up!"></textarea>
+                                            <textarea value={this.state.text} onChange={this.onTextChange} className="form-control" rows="4" id="comment" placeholder="Whats up!"></textarea>
                                             <hr></hr>
-                                            <input type="file" name="pic" accept="image/*"></input>
+                                            <input onChange={this.onFileChange} type="file" name="pic" accept="image/*"></input>
                                             <input type="submit"></input>
                                     </form>
                                 </div>

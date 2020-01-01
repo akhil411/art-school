@@ -15,11 +15,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  role: {
-    type: Number,
-    required: true
+  role: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'roles'
   },
-  date: {
+  createdAt: {
     type: Date,
     default: Date.now
   }

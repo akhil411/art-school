@@ -65,7 +65,7 @@ module.exports = {
         const password = req.body.password;
       
         // Find user by email
-        db.User.findOne({ email }).then(user => {
+        db.User.findOne({ email }).populate('role').then(user => {
           // Check if user exists
           if (!user) {
             return res.status(404).json({ emailnotfound: "Email not found" });
@@ -73,13 +73,14 @@ module.exports = {
       
           // Check password
           bcrypt.compare(password, user.password).then(isMatch => {
+            console.log(user.role.name)
             if (isMatch) {
               // User matched
               // Create JWT Payload
               const payload = {
                 id: user.id,
                 name: user.name,
-                role:user.role
+                role:user.role.name
               };
       
               // Sign token
