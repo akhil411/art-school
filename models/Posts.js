@@ -6,8 +6,13 @@ const PostsSchema = new Schema({
   text: {
     type:String 
   },
-  user: {
-    type:String 
+  user: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'users'
+  },
+  upload: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'uploads'
   },
   createdAt: {
     type: Date,

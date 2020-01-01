@@ -27,5 +27,8 @@ export default {
     },
     getPosts: function() {
         return   axios.get("/api/posts/posts");
+    },
+    fileUpload: function(uploadsData) {
+        return axios.post("/api/uploads/uploads", uploadsData)
     }
 };
