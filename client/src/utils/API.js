@@ -30,5 +30,17 @@ export default {
     },
     fileUpload: function(uploadsData) {
         return axios.post("/api/uploads/uploads", uploadsData)
+    },
+    setLike: function(userId) {
+        return axios.post("/api/posts/like", userId)
+    },
+    getLikes: function(id) {
+        return axios.get("/api/posts/getLikes/" + id)
+    },
+    setComment: function(userID) {
+        return axios.post("/api/posts/comment", userID)
+    },
+    loadComments: function(id) {
+        return axios.get("/api/posts/comments/" + id);
     }
 };

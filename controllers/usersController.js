@@ -106,9 +106,17 @@ module.exports = {
         });
     },
     findbyID: function(req, res) {
-      db.User
-        .find({ role:req.params.id })
-        .then(dbModel => res.json(dbModel))
+      db.Roles
+        .find({name:req.params.id})
+        .then(function(data) {
+          return (
+                  db.User.find({role:data[0]._id})
+                  .then(dbModel => {
+                    console.log(dbModel)
+                    res.json(dbModel)})
+                  .catch(err => res.status(422).json(err))
+          ) 
+        })
         .catch(err => res.status(422).json(err));
     }
 }

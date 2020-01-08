@@ -3,7 +3,7 @@ const axios = require("axios");
  
 router.get("/news", (req, res) => {
     axios
-      .get("http://www.recipepuppy.com/api/?q=chicken")
+      .get("")
       .then(({ data: { results } }) => res.json(results))
       .catch(err => res.status(422).json(err));
   });
