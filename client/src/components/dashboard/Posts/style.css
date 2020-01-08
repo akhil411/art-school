@@ -1,3 +1,31 @@
 .MuiPaper-root {
     margin-top: 20px;
 }
+
+.comment-input-box input {
+    margin-right: 50px;
+}
+
+.comment-input-box {
+    margin-bottom:10px;
+}
+
+
+.media {
+    height: 330px;
+    width: 500px;
+    margin:auto;
+}
+.avatar {
+    background-color: rgb(247, 137, 137) !important;
+}
+
+.modal-comment-body {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.comment-text {
+    cursor: pointer;
+}
+

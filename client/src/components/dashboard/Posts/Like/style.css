@@ -1,0 +1,9 @@
+.like-section {
+    width: 115px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.like-button, .like-text {
+    cursor: pointer;
+}

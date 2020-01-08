@@ -28,7 +28,6 @@ class Dashboard extends Component {
     componentDidMount() {
         this.loadNews();
         this.loadWeather();
-        this.loadPosts();
     }
     
     loadNews = () => {
@@ -73,14 +72,6 @@ class Dashboard extends Component {
             )
             .catch(err => console.log(err));
     }
-
-    loadPosts = () => {
-        API.getPosts()
-            .then(res =>{
-            this.setState({ posts: res.data});
-        })
-        .catch(err => console.log(err));
-    };
 
     onLogoutClick = e => {
         e.preventDefault();
@@ -223,7 +214,7 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         <div>
-                            <Posts username={user.name} posts={this.state.posts}/>
+                            <Posts userId={user.id} />
                         </div>
                     </div>
                     <div className="col-md-4">
