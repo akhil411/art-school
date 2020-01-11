@@ -23,5 +23,155 @@ body {
     bottom: 0;
     width: 100%;
     background-color:#FFD700 ;
-    height:55px;
+    height:65px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.red-text {
+    color: red;
+}
+
+
+/* Course Page CSS Here */
+
+.course-hero-image {
+    height: 30vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./../images/art-courses.jpg");
+}
+
+.common-page-header {
+    height: 75px;
+    background-color: darkslateblue;
+}
+
+.page-heading, .course-more-details {
+    width: 960px;
+    margin:auto;
+    margin-top: 50px;
+}
+
+.course-details {
+    display: grid;
+    width: 800px;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.course-details .block {
+    background-color: #212121;
+    min-height: 260px;
+    width: 255px;
+    margin: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: all 1s ease;
+}
+
+.course-details .block-one {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.course-details .block-two {
+    grid-area: 1 / 2 / span 1 / span 2;
+}
+
+.course-details .block p {
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+}
+
+.course-details .block:hover {
+    margin-top: -5px;
+    margin-bottom: 20px;
+    background-color: #d2222a;
+    cursor: pointer;
+}
+
+/* enquiry page css here */
+
+.enquiry-hero-image {
+    height: 30vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("./../images/art-enquiry.jpg");
+}
+
+.enquiry-form {
+    padding-top: 50px;
+}
+
+.grid-container {
+    padding-top: 50px;
+    width: 960px;
+    margin: auto;
+    margin-bottom: 100px;
+    display: grid;
+}
+
+.enquiry-form form input {
+    width: 350px;
+    height: 40px;
+    border-radius: 2px;
+}
+
+.enquiry-form form label {
+    font-weight: bold;
+}
+
+.enquiry-form form textarea {
+    height: 200px;
+    width: 350px;
+    border-radius: 2px;
+    margin-bottom:25px;
+}
+
+.grid-block-left {
+    grid-area: 1/ 1/ 1/ 1;
+}
+
+.grid-block-right {
+    grid-area: 1/ 2/ 1/ 2;
+}
+
+.grid-block-left .page-heading {
+    width: 400px;
+}
+
+.location-map {
+    margin-top: 175px;
+}
+
+.enquiry-contact {
+    margin-top: 50px;
+}
+
+.enquiry-contact p {
+    margin-bottom: 0 !important;
+}
+.enquiry-contact .modal-email-contact {
+    color: black !important;
+}
+
+.enquiry-container .modal-call-button {
+    background-color: #28334aff !important;
+    color: white !important;
+    border: 1px solid black !important;
+    outline: none;
+    margin-top: 20px;
 }

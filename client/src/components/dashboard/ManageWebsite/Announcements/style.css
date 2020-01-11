@@ -1,0 +1,32 @@
+.announcements-section input {
+    width: 500px;
+}
+
+.announcements-section h3 {
+    color: black;
+    margin-bottom: 10px;
+}
+
+.announcements-section .modal-call-button {
+    background-color: #483D8B;
+    outline: none;
+}
+
+.announcements-section .delete-announcement {
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    outline: none;
+}
+
+.announcements-section .view-announcements {
+    margin-top: 50px;
+}
+
+.announcements-section .view-announcements h3 {
+    margin-bottom: 30px;
+}
+
+.delete-message {
+    color: black;
+}

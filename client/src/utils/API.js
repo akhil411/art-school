@@ -42,5 +42,20 @@ export default {
     },
     loadComments: function(id) {
         return axios.get("/api/posts/comments/" + id);
+    },
+    submitEnquiry: function(enquiry) {
+        return axios.post("/api/enquiry/enquiry", enquiry);
+    },
+    getEnquiry: function() {
+        return axios.get("/api/enquiry/enquiry");
+    },
+    postAnnouncement: function(postdata) {
+        return axios.post("/api/announcements/announcements", postdata);
+    },
+    getAnnouncements: function() {
+        return axios.get("/api/announcements/announcements");
+    },
+    deleteAnnouncement: function(id) {
+        return axios.delete("/api/announcements/announcements/" + id);
     }
 };

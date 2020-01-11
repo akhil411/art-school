@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
 import classnames from "classnames";
 import "./style.css";
+import TextField from '@material-ui/core/TextField';
 
 class Login extends Component {
   constructor() {
@@ -55,15 +56,15 @@ class Login extends Component {
 
     return (
       <div className="login-box">
-        <form noValidate onSubmit={this.onSubmit}>
+        <form noValidate autoComplete="off" onSubmit={this.onSubmit}>
             <div className="input-field input-email">
-            <input
+            <TextField
                 onChange={this.onChange}
                 value={this.state.email}
                 error={errors.email}
                 id="email"
                 type="email"
-                placeholder="Email"
+                label="Email"
                 className={classnames("", {
                 invalid: errors.email || errors.emailnotfound
                 })}
@@ -75,13 +76,13 @@ class Login extends Component {
             </span>
             </div>
             <div className="input-field input-password">
-            <input
+            <TextField
                 onChange={this.onChange}
                 value={this.state.password}
                 error={errors.password}
                 id="password"
                 type="password"
-                placeholder="Password"
+                label="Password"
                 className={classnames("", {
                 invalid: errors.password || errors.passwordincorrect
                 })}
@@ -100,9 +101,9 @@ class Login extends Component {
                 letterSpacing: "1.5px",
                 }}
                 type="submit"
-                className="login-button"
+                className="login-button modal-call-button"
             >
-                Login
+                <span>Login </span>
             </button>
             </div>
         </form>

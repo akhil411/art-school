@@ -1,29 +1,55 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import API from './../../../utils/API';
+import Information from './../../Information/Information';
+
+
+export const NewsWeatherContext = React.createContext();
 
 class Navbar extends Component {
     constructor() {
         super();
         this.state = {
             scrolling : false,
-            theposition: window.pageYOffset
+            theposition: window.pageYOffset,
+            news: [],
+            weather: []
         };
         this.handleScroll = this.handleScroll.bind(this);
       }
 
       componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        this.loadNews();
+        this.loadWeather();
         
     }
     
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
+
+    loadNews = () => {
+        API.getNews()
+            .then(res =>
+            this.setState({ news: res.data})
+            )
+            .catch(err => console.log(err));
+    };
+
+    loadWeather = () => {
+        API.getWeather()
+            .then(res =>
+            this.setState({ weather: res.data})
+            )
+            .catch(err => console.log(err));
+    };
+
     handleScroll(event) {
         if (window.pageYOffset <= 1) {
             this.setState({scrolling: false});
-        }
+        } 
         else if (window.pageYOffset > 1) {
             this.setState({scrolling: true});
         }
@@ -48,24 +74,24 @@ class Navbar extends Component {
                             <a className="header-text" href="/">Art School</a>
                             <div className="hamburger-menu">
                                 <hr></hr>
-                                <hr className="hr-hover"></hr>
+                                <hr className="hr-hover"></hr> 
                                 <hr></hr>
                             </div>
                         </div>
                         <div className="grid-contents">
                             <div className="item1">
-                                <h4>Courses</h4>
-                                <h4>Online Enquiry</h4>
-                                <h4>Student Services</h4>
-                                <h4>Policy Manual</h4>
-                                <h4>Employment</h4>
-                                <h4>Board Members</h4>
+                                <a href="/courses"><h4>Courses</h4></a>
+                                <a href="/online-enquiry"><h4>Online Enquiry</h4></a>
+                                <a href="/student-services"><h4>Student Services</h4></a>
+                                <a href="/employment"><h4>Employment</h4></a>
+                                <a href="/policy-manual"><h4>Policy Manual</h4></a>
                             </div>
                             <div className="item2">
                                 <h4>Contact</h4>
                                 <p>1a, Castle Hill Road</p>
                                 <p>Castle HIll</p>
                                 <p>Sydney, NSW 2154</p>
+                                <p><a className="modal-email-contact" href="tel:0469187261">Ph: 0469187261</a></p>
                                 <p><a className="modal-email-contact" href="mailto:contact@hillsschoolsydney.com.au">Email: contact@hillsschoolsydney.com.au</a></p>
                                 <br></br>
                                 <a href="tel:0469187261"><button className="modal-call-button"><span>Call </span></button></a>
@@ -85,7 +111,9 @@ class Navbar extends Component {
                             </div>
                         </div>
                         <div className="announcements-information">
-                          <h1>Announcements</h1>
+                        <NewsWeatherContext.Provider value={this.state}>
+                            <Information />
+                        </NewsWeatherContext.Provider>
                         </div>
                     </div>
                 </div>
@@ -95,4 +123,6 @@ class Navbar extends Component {
 }
 }
 
-  export default Navbar;
+Navbar.contextType = NewsWeatherContext;
+
+export default Navbar;

@@ -6,10 +6,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import Posts from "./Posts/Posts";
 import API from './../../utils/API';
-import Information from './../Information/Information';
 import Avatar from '@material-ui/core/Avatar';
-
-export const NewsContext = React.createContext();
 
 class Dashboard extends Component {
 
@@ -19,32 +16,9 @@ class Dashboard extends Component {
             text: "",
             user: "",
             news: [],
-            weather: [],
-            posts: [],
             selectedFile: ""
         };
     }
-
-    componentDidMount() {
-        this.loadNews();
-        this.loadWeather();
-    }
-    
-    loadNews = () => {
-        API.getNews()
-            .then(res =>
-            this.setState({ news: res.data})
-            )
-            .catch(err => console.log(err));
-    };
-
-    loadWeather = () => {
-        API.getWeather()
-            .then(res =>
-            this.setState({ weather: res.data})
-            )
-            .catch(err => console.log(err));
-    };
 
     onTextChange = e => {
         this.setState({text:e.target.value});
@@ -130,7 +104,9 @@ class Dashboard extends Component {
     return (
         <div className="dashboard-container">
             <div className="row row-main">
-                    <div className="col-md-2">
+            <div className="col-md-9">
+            <div className="row">
+                    <div className="col-md-3">
                     <div className="left-section">
                         <div className="icon">
                            <Avatar className="avatar-icon">{user.name.charAt(0).toUpperCase()}{user.name.charAt(1).toUpperCase()}</Avatar>
@@ -146,7 +122,7 @@ class Dashboard extends Component {
                                 <Link to="/dashboard/manage-users">
                                   <h5>Manage Users</h5>
                                 </Link>
-                                <Link to="/">
+                                <Link to="/dashboard/manage-website">
                                   <h5>Manage Website</h5>
                                 </Link>
                               </div>
@@ -173,7 +149,7 @@ class Dashboard extends Component {
                                 <Link to="/register">
                                   <h5>Manage Reports</h5>
                                 </Link>
-                                <Link to="/register">
+                                <Link to="/dashboard/manage-website">
                                   <h5>Manage Website</h5>
                                 </Link>
                               </div>
@@ -200,12 +176,12 @@ class Dashboard extends Component {
                         </button>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 right-section">
                         <div className="blog-submit">
                             <div className="card">
                                 <div className="card-body">
                                     <form onSubmit={this.onSubmit}>
-                                            <textarea value={this.state.text} onChange={this.onTextChange} className="form-control" rows="4" id="comment" placeholder="Whats up!"></textarea>
+                                            <textarea value={this.state.text} onChange={this.onTextChange} className="form-control" rows="4" id="comment" placeholder="Add your new Art!"></textarea>
                                             <hr></hr>
                                             <input onChange={this.onFileChange} type="file" name="pic" accept="image/*"></input>
                                             <input type="submit"></input>
@@ -217,18 +193,13 @@ class Dashboard extends Component {
                             <Posts userId={user.id} />
                         </div>
                     </div>
-                    <div className="col-md-4">
-                        <NewsContext.Provider value={this.state}>
-                            <Information />
-                        </NewsContext.Provider>
-                    </div>
+                  </div>
+                  </div>
                 </div>
             </div>
     );
   }
 }
-
-Dashboard.contextType = NewsContext;
 
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,

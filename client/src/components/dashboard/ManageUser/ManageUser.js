@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import "./style.css";
 import API from './../../../utils/API';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";
 import UserTable from './UserTable/UserTable';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import Typography from '@material-ui/core/Typography';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from '@material-ui/core/Link';
 
 class ManageUser extends Component {
 
@@ -52,24 +55,28 @@ class ManageUser extends Component {
   render() {
     return (
         <div className="manage-users">
-          <div>
-            <Link to="/dashboard">
-              <h5>Back to your Dashboard</h5>
-            </Link>
-          </div>
-          <div style={{ width: 300 }}>
-              <Autocomplete
-                id="free-solo-demo"
-                freeSolo
-                options={this.state.roles.map(option => option.name)}
-                value={this.state.roles.map(option => option._id)}
-                onChange={this.handleChange}  
-                renderInput={params => (
-                  <TextField {...params} label="Select Role" margin="normal" variant="outlined" fullWidth />
-                )}
-              />
-          </div>
-          <UserTable users={this.state.users}/>
+          <div className="manage-users-header-background"></div>
+          <div className="manage-user-wrapper">
+              <div>
+                <Breadcrumbs aria-label="breadcrumb">
+                  <Link color="inherit" href="/dashboard">
+                    Dashboard
+                  </Link>
+                  <Typography color="textPrimary">Manage-Users</Typography>
+                </Breadcrumbs>
+              </div>
+              <div style={{ width: 300 }}>
+                  <Autocomplete
+                    id="free-solo-demo"
+                    options={this.state.roles.map(option => option.name)}
+                    onChange={this.handleChange}  
+                    renderInput={params => (
+                      <TextField {...params} label="Select Role" margin="normal" variant="outlined" fullWidth />
+                    )}
+                  />
+              </div>
+              <UserTable users={this.state.users}/>
+            </div>
         </div>
     );
   }

@@ -51,7 +51,7 @@ module.exports = {
                 });
             });
             }
-        });
+        }); 
     },
     login: function(req, res) {
         const { errors, isValid } = validateLoginInput(req.body);
