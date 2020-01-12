@@ -8,7 +8,7 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 import Register from "./pages/Register";
-import PrivateRoute from "./Components/private-route/PrivateRoute";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import UserDashboard from "./pages/Dashboard";
 import ManageUsers from "./pages/ManageUsers";
 import ManageWebsite from "./pages/ManageWebsite";
