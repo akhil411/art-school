@@ -4,5 +4,6 @@ module.exports = {
   Posts: require("./Posts"),
   Uploads: require("./Uploads"),
   Enquiry:require("./Enquiry"),
-  Announcement:require("./Announcement")
+  Announcement:require("./Announcement"),
+  Reports:require("./Reports")
 };

@@ -8,7 +8,8 @@ import 'react-tabs/style/react-tabs.css';
 import Link from '@material-ui/core/Link';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Typography from '@material-ui/core/Typography';
-import SubmitReports from './SubmitReports/SubmitReports'
+import SubmitReports from './SubmitReports/SubmitReports';
+import ViewReports from './ViewReports/ViewReports';
 
 
 class StudentReports extends Component {
@@ -44,15 +45,15 @@ class StudentReports extends Component {
             </div>
             <Tabs>
                 <TabList>
-                    <Tab>Reports</Tab>
-                    <Tab>Student Enquiry</Tab>
+                    <Tab>Submit Report</Tab>
+                    <Tab>View Reports</Tab>
                 </TabList>
                     
                 <TabPanel>
-                    <SubmitReports userId={this.props.auth.user._id}/>
+                    <SubmitReports userId={this.props.auth.user.id}/>
                 </TabPanel>
                 <TabPanel>
-                    <h1>h2</h1>
+                    <ViewReports />
                 </TabPanel>
             </Tabs>
         </div>

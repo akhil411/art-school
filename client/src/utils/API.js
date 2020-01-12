@@ -57,5 +57,17 @@ export default {
     },
     deleteAnnouncement: function(id) {
         return axios.delete("/api/announcements/announcements/" + id);
+    },
+    submitReport: function(postdata) {
+        return axios.post("/api/reports/reports", postdata)
+    },
+    getReports: function(id) {
+        return axios.get("/api/reports/reports/" + id);
+    },
+    getStudentReports: function(id) {
+        return axios.get("/api/reports/student-reports/" + id);
+    },
+    deleteReport: function(id) {
+        return axios.delete("/api/reports/reports/" + id);
     }
 };

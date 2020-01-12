@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./style.css";
-import API from './../../../utils/API';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../../actions/authActions";

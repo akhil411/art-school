@@ -7,6 +7,7 @@ const postsRoutes = require("./posts");
 const uploadsRoutes = require("./uploads");
 const enquiryRoutes = require("./enquiry");
 const announcementsRoutes = require("./announcements");
+const reportsRoutes = require("./reports");
 
 router.use("/users", userRoutes);
 router.use("/news", newsRoutes);
@@ -16,4 +17,5 @@ router.use("/posts", postsRoutes);
 router.use("/uploads", uploadsRoutes);
 router.use("/enquiry", enquiryRoutes);
 router.use("/announcements", announcementsRoutes);
+router.use("/reports", reportsRoutes);
 module.exports = router;
