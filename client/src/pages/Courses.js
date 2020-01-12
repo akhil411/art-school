@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import CourseOne from './../components/Courses/CourseOne/CourseOne';
-import CourseTwo from './../components/Courses/CourseTwo/CourseTwo';
+import CourseOne from './../Components/Courses/CourseOne/CourseOne';
+import CourseTwo from './../Components/Courses/CourseTwo/CourseTwo';
 
 class Course extends Component {
     state = {

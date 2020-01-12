@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import StudentReports from "./../components/Dashboard/StudentReports/StudentReports";
+import StudentReports from "./../Components/Dashboard/StudentReports/StudentReports";
 
 class StudentReport extends Component {
   render() {
