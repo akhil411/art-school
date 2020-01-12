@@ -111,5 +111,17 @@ module.exports = {
         .then(dbModel => {
           res.json(dbModel)})
         .catch(err => res.status(422).json(err));
+    },
+    findStudents: function(req, res) {
+      db.Roles
+        .find({name:req.params.id})
+        .then(function(data) {
+          return (
+                  db.User.find({ role:data[0]._id })
+                  .then(dbModel => res.json(dbModel))
+                  .catch(err => res.status(422).json(err))
+          ) 
+        })
+        .catch(err => res.status(422).json(err));
     }
 }

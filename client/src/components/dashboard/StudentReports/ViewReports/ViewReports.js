@@ -30,7 +30,7 @@ class ViewReports extends Component {
     }
 
     loadUsers = () => {
-        API.getUserType("student")
+        API.getStudentUsers("student")
             .then(res => {
                 this.setState({ students: res.data })
             })

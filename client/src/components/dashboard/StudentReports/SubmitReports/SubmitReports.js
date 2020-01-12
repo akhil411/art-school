@@ -34,8 +34,9 @@ class SubmitReport extends Component {
     }
 
     loadUsers = () => {
-        API.getUserType("student")
+        API.getStudentUsers("student")
             .then(res => {
+                console.log(res.data)
                 this.setState({ students: res.data })
             })
             .catch(err => console.log(err));

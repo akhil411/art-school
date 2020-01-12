@@ -14,4 +14,7 @@ router.route("/users")
   router.route("/users/:id")
   .get(usersController.findbyID);
 
+  router.route("/students/:id")
+  .get(usersController.findStudents);
+
 module.exports = router;

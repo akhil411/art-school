@@ -22,6 +22,9 @@ export default {
     getUserType: function(id) {
         return axios.get("/api/users/users/" + id);
       },
+    getStudentUsers: function(id) {
+        return axios.get("/api/users/students/" + id);
+      },
     createPosts: function(postdata) {
         return   axios.post("/api/posts/posts", postdata);
     },
