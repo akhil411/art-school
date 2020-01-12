@@ -16,7 +16,7 @@
     border: none;
 } */
 
-.react-tabs__tab--selected {
+.information-content .react-tabs__tab--selected {
     border-color: #28334aff;
     color: gold;
     border-radius: 0;
@@ -25,7 +25,7 @@
 
 }
 
-.react-tabs__tab-list {
+.information-content .react-tabs__tab-list {
     border-bottom: none;
     margin: 0;
     /* text-align: left; */
@@ -42,7 +42,7 @@
 
 }
 
-.react-tabs__tab-panel ul li {
+.information-content .react-tabs__tab-panel ul li {
     color: white;
     text-align: left;
     margin-top: 10px;
@@ -52,6 +52,6 @@
 
 }
 
-.react-tabs__tab-panel ul {
+.information-content .react-tabs__tab-panel ul {
     list-style: none;
 }

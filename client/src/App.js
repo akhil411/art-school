@@ -10,13 +10,17 @@ import store from "./store";
 import Register from "./pages/Register";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import UserDashboard from "./pages/Dashboard";
-import ManageUsers from "./pages/ManageUsers"
+import ManageUsers from "./pages/ManageUsers";
+import ManageWebsite from "./pages/ManageWebsite";
 import NoMatch from "./pages/NoMatch";
+import Courses from "./pages/Courses";
+import Enquiry from "./pages/OnlineEnquiry"
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 import Popper from 'popper.js';
+import StudentReport from './pages/StudentReports'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -48,8 +52,12 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/register" component={Register} />
+                    <Route exact path="/courses" component={Courses} />
+                    <Route exact path="/online-enquiry" component={Enquiry} />
                     <PrivateRoute exact path="/dashboard" component={UserDashboard} />
                     <PrivateRoute path="/dashboard/manage-users" component={ManageUsers} />
+                    <PrivateRoute path="/dashboard/manage-website" component={ManageWebsite} />
+                    <PrivateRoute path="/dashboard/student-reports" component={StudentReport} />
                     <Route path="*"><NoMatch /></Route>
                 </Switch>
             </div>

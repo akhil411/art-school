@@ -8,10 +8,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import './style.css'
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'email', label: 'Email', minWidth: 100 }
+  { id: 'name', label: 'Name', minWidth: 100 },
+  { id: 'email', label: 'Email', minWidth: 100 },
+  { id: 'action', label: '', minWidth: 100 }
 ];
 
 const useStyles = makeStyles({

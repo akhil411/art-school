@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./style.css";
-import {NewsContext} from '../../Dashboard/Dashboard'
+import {NewsWeatherContext} from '../../layout/Navbar'
 
 class News extends Component {
   render() {
     return (
-            <NewsContext.Consumer>
+            <NewsWeatherContext.Consumer>
                 {value => ( value.news.length ? (
                     <ul>
                         {value.news.map(news => (
@@ -21,7 +21,7 @@ class News extends Component {
                     <h3>No Results to Display</h3>
                     )
                 )}
-            </NewsContext.Consumer>
+            </NewsWeatherContext.Consumer>
     );
   }
 }

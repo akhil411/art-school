@@ -3,6 +3,15 @@
     justify-content: center;
     margin: 0 !important;
 }
+
+.col-md-9 {
+    margin:auto;
+}
+
+.right-section {
+    max-width: 600px;
+    min-width:600px
+}
 .icon .avatar-icon {
     background-color: #f65058ff;
     border-radius: 50px;
@@ -47,7 +56,7 @@
 }
 
 .dashboard-container {
-    background: rgba(0, 0, 0, 0.2) url("./dashboard-image.jpg");
+    background: rgba(0, 0, 0, 0.2) url("./dashboard-blue-image.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;

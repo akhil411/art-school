@@ -128,7 +128,7 @@ class Register extends Component {
                 <span className="red-text">{errors.password}</span>
               </div>
               <div className="input-field col s12">
-                <input
+                <input 
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
