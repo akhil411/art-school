@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import {NewsWeatherContext} from '../../layout/Navbar'
+import {NewsWeatherContext} from '../../Layout/Navbar'
 
 class News extends Component {
   render() {
