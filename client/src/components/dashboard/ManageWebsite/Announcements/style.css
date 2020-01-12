@@ -30,3 +30,7 @@
 .delete-message {
     color: black;
 }
+
+.MuiSnackbarContent-root {
+    background-color: green !important;
+}

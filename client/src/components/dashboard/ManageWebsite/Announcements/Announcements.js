@@ -8,8 +8,8 @@ import API from './../../../../utils/API';
 import classnames from "classnames";
 import TextField from '@material-ui/core/TextField';
 import './style.css';
-import Snack from './Snack';
-import { SnackbarProvider, useSnackbar } from 'notistack';
+import Snackbar from '@material-ui/core/Snackbar';
+
 
 class Enquiry extends Component {
 
@@ -36,7 +36,7 @@ class Enquiry extends Component {
         event.preventDefault();
         API.postAnnouncement({announcement:this.state.announcement, user:this.props.user})
             .then(res => {
-                this.setState({announcement:"", errors:"", submitSuccess:true });
+                this.setState({ announcement: "", errors: "", submitSuccess: true });
                 this.loadAnnouncements();
             })
             .catch(err => {
@@ -47,7 +47,7 @@ class Enquiry extends Component {
     loadAnnouncements = () => {
         API.getAnnouncements()
         .then(res => {
-            this.setState({announcements:res.data})
+            this.setState({ announcements: res.data })
             console.log(res.data)
         })
         .catch(err => {
@@ -56,7 +56,7 @@ class Enquiry extends Component {
     }
 
     deleteId =(id) => {
-        this.setState({deleteId:id})
+        this.setState({ deleteId: id })
     }
 
     deleteAnnouncement = () => {
@@ -66,6 +66,15 @@ class Enquiry extends Component {
         )
         .catch(err => console.log(err));
     }
+
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        this.setState({ submitSuccess: false })
+      };
 
     render() {
 
@@ -92,7 +101,7 @@ class Enquiry extends Component {
                                     {errors.announcement}
                                 </span>
                                 <br />
-                                <Snack submit={this.state.submitSuccess}/>
+                                <button className="modal-call-button" type="submit" value="Submit"><span>Submit </span></button>
                             </form>
                 </div>
                 <div className="view-announcements">
@@ -138,6 +147,12 @@ class Enquiry extends Component {
                         </div>
                     </div>
 			    </div>
+                <Snackbar
+                    open={this.state.submitSuccess}
+                    autoHideDuration={3000}
+                    onClose={this.handleClose}
+                    message="&#10004; Announcement Successfully Submitted"
+                    />
             </div>
         );
     }

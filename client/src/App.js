@@ -20,6 +20,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 import Popper from 'popper.js';
+import StudentReport from './pages/StudentReports'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -56,6 +57,7 @@ class App extends Component {
                     <PrivateRoute exact path="/dashboard" component={UserDashboard} />
                     <PrivateRoute path="/dashboard/manage-users" component={ManageUsers} />
                     <PrivateRoute path="/dashboard/manage-website" component={ManageWebsite} />
+                    <PrivateRoute path="/dashboard/student-reports" component={StudentReport} />
                     <Route path="*"><NoMatch /></Route>
                 </Switch>
             </div>

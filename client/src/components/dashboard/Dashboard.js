@@ -125,13 +125,16 @@ class Dashboard extends Component {
                                 <Link to="/dashboard/manage-website">
                                   <h5>Manage Website</h5>
                                 </Link>
+                                <Link to="/dashboard/student-reports">
+                                  <h5>Student Reports</h5>
+                                </Link>
                               </div>
                             );
                           case "teacher":
                             return (
                               <div>
-                                <Link to="/register">
-                                  <h5>Manage Reports</h5>
+                                <Link to="/dashboard/student-reports">
+                                  <h5>Student Reports</h5>
                                 </Link>
                               </div>
                             );
