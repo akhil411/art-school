@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Register from "./../Components/Register/Register";
+import Register from "./../components/Register/Register";
 
 class UserRegister extends Component {
   render() {

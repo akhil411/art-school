@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Login from "./../Components/Login/Login";
-import HeroImage from "./../Components/HeroImage/HeroImage";
+import Login from "./../components/Login/Login";
+import HeroImage from "./../components/HeroImage/HeroImage";
 
 class Home extends Component {
     state = {

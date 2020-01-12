@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ManageWebsite from "./../Components/Dashboard/ManageWebsite/ManageWebsite";
+import ManageWebsite from "./../components/Dashboard/ManageWebsite/ManageWebsite";
 
 class ManageContent extends Component {
   render() {

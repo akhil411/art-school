@@ -15,10 +15,10 @@ function Information(props) {
             </TabList>
 
             <TabPanel>
-                <News />
+                {/* <News /> */}
             </TabPanel>
             <TabPanel>
-                <Weather />
+                {/* <Weather /> */}
             </TabPanel>
         </Tabs>
 

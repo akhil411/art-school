@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ManageUser from "./../Components/Dashboard/ManageUser/ManageUser";
+import ManageUser from "./../components/Dashboard/ManageUser/ManageUser";
 
 class ManageUsers extends Component {
   render() {
