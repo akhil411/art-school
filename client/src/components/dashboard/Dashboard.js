@@ -99,6 +99,7 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
+    console.log(user)
     const  role  = user.role;
     
     return (

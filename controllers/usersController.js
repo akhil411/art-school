@@ -73,7 +73,6 @@ module.exports = {
       
           // Check password
           bcrypt.compare(password, user.password).then(isMatch => {
-            console.log(user.role.name)
             if (isMatch) {
               // User matched
               // Create JWT Payload
