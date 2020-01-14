@@ -3,16 +3,16 @@
 <p> Welcome to Art School, 
 <p>Art School is a website for students, teachers, admins and other staff of an institution. In this website various users have different restricted access. The Website can be modified to suite various other Courses also.
 
-<ul><strong>What each users can do:</strong>
+<p><strong>What each users can do:</strong>
+
 <li>Admin - add & update users, manage website contents, view & submit student reports
 <li>Staff - manage website contents, view & submit student reports
 <li>Teachers - view & submit student reports
 <li>Students - view report
-</ul>
 
 <p>The main highlight is that every users can post their artwork in the website and others can like and comment on each post.
 
-<h3>Deployed Heroku Link
+<h3>Deployed Heroku Link</h3>
 
 <a href="https://art-school.herokuapp.com/" target="_blank">Art School App</a>
 
