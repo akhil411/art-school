@@ -8,8 +8,9 @@ const passport = require("passport");
 // Load input validation
 const validateRegisterInput = require("../validation/register");
 const validateLoginInput = require("../validation/login");
-const db = require("./../models");
+const validateUpdatePassword = require("../validation/updatePassword");
 const axios = require("axios");
+const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
@@ -122,5 +123,39 @@ module.exports = {
           ) 
         })
         .catch(err => res.status(422).json(err));
-    }
+    },
+    updatePassword: function(req, res) {
+      const { errors, isValid } = validateUpdatePassword(req.body);
+
+      // Check validation
+      if (!isValid) {
+        return res.status(400).json(errors);
+      }
+    
+      const userId = req.body.userId;
+      const oldPassword = req.body.oldPassword;
+      let newPassword = req.body.newPassword1;
+    
+      db.User.findOne({ _id : userId }).then(user => {
+        bcrypt.compare(oldPassword, user.password).then(isMatch => {
+          if (isMatch) {
+
+            bcrypt.genSalt(10, (err, salt) => {
+              bcrypt.hash(newPassword, salt, (err, hash) => {
+              if (err) throw err;
+              newPassword = hash;
+              db.User.updateOne({ _id: userId }, { password: newPassword })
+                    .then(user => res.json(user))
+                    .catch(err => console.log(err));
+                });
+            });
+
+          } else {
+            return res
+              .status(400)
+              .json({ passwordincorrect: "Password incorrect" });
+          }
+        });
+      });
+  }
 }

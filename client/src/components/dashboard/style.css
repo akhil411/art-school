@@ -71,3 +71,16 @@
     margin-top: 50px;
 }
 
+.blog-submit .modal-call-button {
+    background-color: white;
+    color: #28334aff;
+    border: 1px solid #28334aff;
+}
+
+.left-section .modal-call-button {
+    background-color: transparent;
+}
+
+.MuiCardContent-root {
+    text-align: left;
+}

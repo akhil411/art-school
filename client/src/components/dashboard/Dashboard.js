@@ -7,6 +7,8 @@ import "./style.css";
 import Posts from "./Posts/Posts";
 import API from './../../utils/API';
 import Avatar from '@material-ui/core/Avatar';
+import Snackbar from '@material-ui/core/Snackbar';
+
 
 class Dashboard extends Component {
 
@@ -16,7 +18,9 @@ class Dashboard extends Component {
             text: "",
             user: "",
             news: [],
-            selectedFile: ""
+            selectedFile: "",
+            errors: {},
+            submitSuccess: false,
         };
     }
 
@@ -41,10 +45,13 @@ class Dashboard extends Component {
         const imageName = imageDetails ? imageDetails.image : null;
         const imageUrl = imageDetails ? imageDetails.location : null;
         API.createPosts({text:this.state.text, user:this.props.auth.user.id, name:imageName, url:imageUrl})
-            .then(res =>
-                window.location.reload()
-            )
-            .catch(err => console.log(err));
+            .then(res =>{
+              this.setState({ text: "", errors: "", submitSuccess: true });
+              setTimeout(function(){window.location.reload();}, 2000);
+            })
+            .catch(err => {
+              this.setState({ errors: err.response.data })
+          });
     }
 
     onLogoutClick = e => {
@@ -101,6 +108,7 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     console.log(user)
     const  role  = user.role;
+    const { errors } = this.state;
     
     return (
         <div className="dashboard-container">
@@ -131,14 +139,6 @@ class Dashboard extends Component {
                                 </Link>
                               </div>
                             );
-                          case "teacher":
-                            return (
-                              <div>
-                                <Link to="/dashboard/student-reports">
-                                  <h5>Student Reports</h5>
-                                </Link>
-                              </div>
-                            );
                           case "student":
                             return (
                               <div>
@@ -147,37 +147,20 @@ class Dashboard extends Component {
                                 </Link>
                               </div>
                             );
-                          case "staff":
-                            return (
-                              <div>
-                                <Link to="/dashboard/student-reports">
-                                  <h5>Student Reports</h5>
-                                </Link>
-                                <Link to="/dashboard/manage-website">
-                                  <h5>Manage Website</h5>
-                                </Link>
-                              </div>
-                            );
                           default:
                             return (
-                              <div></div>
+                              <div>
+                              <Link to="/dashboard/student-reports">
+                                <h5>Student Reports</h5>
+                              </Link>
+                              <Link to="/dashboard/manage-website">
+                                <h5>Manage Website</h5>
+                              </Link>
+                            </div>
                             );
-                            
                           }
                         })()}
-                      
-                        <button
-                            style={{
-                                width: "150px",
-                                borderRadius: "3px",
-                                letterSpacing: "1.5px",
-                                marginTop: "1rem"
-                            }}
-                            onClick={this.onLogoutClick}
-                            className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                            >
-                            Logout
-                        </button>
+                        <button className="modal-call-button" type="submit" value="Submit" onClick={this.onLogoutClick}><span>Logout </span></button>
                         </div>
                     </div>
                     <div className="col-md-6 right-section">
@@ -186,13 +169,22 @@ class Dashboard extends Component {
                                 <div className="card-body">
                                     <form onSubmit={this.onSubmit}>
                                             <textarea value={this.state.text} onChange={this.onTextChange} className="form-control" rows="4" id="comment" placeholder="Add your new Art!"></textarea>
+                                            <span className="red-text">
+                                                {errors.text}
+                                            </span>
                                             <hr></hr>
                                             <input onChange={this.onFileChange} type="file" name="pic" accept="image/*"></input>
-                                            <input type="submit"></input>
+                                            <button className="modal-call-button" type="submit" value="Submit"><span>Submit </span></button>
                                     </form>
                                 </div>
                             </div>
                         </div>
+                        <Snackbar
+                          open={this.state.submitSuccess}
+                          autoHideDuration={3000}
+                          onClose={this.handleClose}
+                          message="&#10004; Post Submitted Successfully"
+                        />
                         <div>
                             <Posts userId={user.id} />
                         </div>

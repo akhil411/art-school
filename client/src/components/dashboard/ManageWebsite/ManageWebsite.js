@@ -9,8 +9,8 @@ import Link from '@material-ui/core/Link';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Typography from '@material-ui/core/Typography';
 import Enquiry from './Enquiry/Enquiry';
-import Announcements from './Announcements/Announcements'
-
+import Announcements from './Announcements/Announcements';
+import UpdatePassword from './../UpdatePassword/UpdatePassword'
 
 class ManageWebsite extends Component {
 
@@ -47,8 +47,7 @@ class ManageWebsite extends Component {
                 <TabList>
                     <Tab>Announcements</Tab>
                     <Tab>Online Enquiry</Tab>
-                    <Tab>Student Services</Tab>
-                    <Tab>Employment</Tab>
+                    <Tab>Update Password</Tab>
                 </TabList>
 
                 <TabPanel>
@@ -58,11 +57,7 @@ class ManageWebsite extends Component {
                     <Enquiry />
                 </TabPanel>
                 <TabPanel>
-                    <h1>Hello</h1>
-                </TabPanel>
-                
-                <TabPanel>
-                    
+                  <UpdatePassword userId={this.props.auth.user.id}/>
                 </TabPanel>
             </Tabs>
         </div>
