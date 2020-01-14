@@ -8,7 +8,7 @@ class Home extends Component {
 
   render() {
     return (
-        <div className="homepage-content">
+        <div className="homepage-content home-section">
             <div>
                 <HeroImage />
             </div>

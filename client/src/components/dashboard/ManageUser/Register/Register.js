@@ -2,9 +2,13 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../../../../actions/authActions";
 import classnames from "classnames";
-import API from './../../utils/API'
+import API from './../../../../utils/API';
+import TextField from '@material-ui/core/TextField';
+import './style.css';
+import Snackbar from '@material-ui/core/Snackbar';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 class Register extends Component {
   constructor() {
@@ -46,10 +50,11 @@ class Register extends Component {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  userSelection = e => {
-    this.setState({role:e.target.value})
+  handleChange = (event, value) => {
+    if (value !== null) {
+      this.setState({role:value._id})
+    }
   }
-
 
   onSubmit = e => {
     e.preventDefault();
@@ -69,107 +74,85 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <Link to="/" className="btn-flat">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
-            </div>
+      <div className="announcements-section register-section">
+                <div className="add-announcements add-user">
+                    <h3>Register New User</h3>
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input
+                <TextField
                   onChange={this.onChange}
                   value={this.state.name}
                   error={errors.name}
                   id="name"
                   type="text"
+                  label="Name"
                   className={classnames("", {
                     invalid: errors.name
                   })}
                 />
-                <label htmlFor="name">Name</label>
+                <br></br>
                 <span className="red-text">{errors.name}</span>
-              </div>
-              <div className="input-field col s12">
-                <input
+                <br></br>
+                <TextField
                   onChange={this.onChange}
                   value={this.state.email}
                   error={errors.email}
                   id="email"
                   type="email"
+                  label="Email"
                   className={classnames("", {
                     invalid: errors.email
                   })}
                 />
-                <label htmlFor="email">Email</label>
+                <br></br>
                 <span className="red-text">{errors.email}</span>
-              </div>
-              <div className="input-field col s12">
-                <input
+                <br></br>
+                <TextField
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
                   type="password"
+                  label="Password"
                   className={classnames("", {
                     invalid: errors.password
                   })}
                 />
-                <label htmlFor="password">Password</label>
+                <br></br>
                 <span className="red-text">{errors.password}</span>
-              </div>
-              <div className="input-field col s12">
-                <input 
+                <br></br>
+                <TextField 
                   onChange={this.onChange}
                   value={this.state.password2}
                   error={errors.password2}
                   id="password2"
                   type="password"
+                  label="Confirm Password"
                   className={classnames("", {
                     invalid: errors.password2
                   })}
                 />
-                <label htmlFor="password2">Confirm Password</label>
+                <br></br>
                 <span className="red-text">{errors.password2}</span>
-              </div>
-              <div className="input-field col s12">
-                    <label>
-                    <select id="role" error={errors.role} onChange={this.userSelection} value={this.state.value}>
-                        <option>Select a Role</option>
-                        {this.state.roles.map(role => (
-                            <option value={role._id}>{role.name}</option>
-                        ))}
-                    </select>
-                    </label>
+                <br></br>
+                <div style={{ width: 300 }}>
+                  <Autocomplete
+                    id="free-solo-demo"
+                    options={this.state.roles}
+                    onChange={this.handleChange} 
+                    getOptionLabel={option => option.name} 
+                    renderInput={params => (
+                      <TextField {...params} label="Select Role" margin="normal" variant="outlined" fullWidth />
+                    )}
+                  />
+                </div>
+                <br></br>
                 <span className="red-text">{errors.role}</span>
-              </div>
-              <div className="col s12">
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large"
-                >
+                <br></br>
+                <button className="modal-call-button" type="submit" value="Submit"><span>Sign up </span></button>
                   Sign up
-                </button>
-              </div>
             </form>
           </div>
         </div>
-      </div>
     );
   }
 }

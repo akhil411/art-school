@@ -9,7 +9,7 @@ import Link from '@material-ui/core/Link';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import UpdateUser from './UpdateUser/UpdateUser';
-import Register from './../../Register/Register'
+import Register from './Register/Register'
 
 class ManageUser extends Component {
 

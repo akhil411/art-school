@@ -7,14 +7,9 @@ class News extends Component {
     return (
             <NewsWeatherContext.Consumer>
                 {value => ( value.news.length ? (
-                    <ul>
+                    <ul className="news-content">
                         {value.news.map(news => (
-                        <li>
-                            <strong>
-                                {news.title}
-                                <br></br>
-                            </strong>
-                        </li>
+                        <li><a href={news.url} target="_blank">{news.title}</a></li>
                         ))}
                     </ul>
                     ) : (

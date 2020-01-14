@@ -1,5 +1,7 @@
 .website-content {
     padding-top: 100px;
+    min-height: calc(100vh - 50px);
+    padding-bottom: 50px;
 }
 
 .website-content .react-tabs {

@@ -23,7 +23,7 @@ body {
     bottom: 0;
     width: 100%;
     background-color:#FFD700 ;
-    height:65px;
+    height:70px;
 }
 
 a {
@@ -63,7 +63,7 @@ a {
     margin-top: 25px;
 }
 
-.course-details .block {
+.course-details .block-one, .course-details .block-two {
     background-color: #212121;
     min-height: 260px;
     width: 255px;
@@ -84,7 +84,7 @@ a {
     grid-area: 1 / 2 / span 1 / span 2;
 }
 
-.course-details .block p {
+.course-details .block-one p, .course-details .block-two p {
     font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
@@ -95,7 +95,7 @@ a {
     color: #ffffff;
 }
 
-.course-details .block:hover {
+.course-details .block-one:hover , .course-details .block-two:hover{
     margin-top: -5px;
     margin-bottom: 20px;
     background-color: #d2222a;
@@ -174,4 +174,21 @@ a {
     border: 1px solid black !important;
     outline: none;
     margin-top: 20px;
+}
+
+
+.homepage-content {
+    padding-bottom: 50px;
+}
+
+.home-section {
+    padding-bottom: 0 !important;
+}
+
+.not-found {
+    min-height: calc(100vh - 50px);
+}
+
+.not-found .row {
+    margin: 0 !important;
 }

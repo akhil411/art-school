@@ -69,6 +69,7 @@ class SubmitReport extends Component {
         API.submitReport(newReport)
             .then(res => {
                 this.setState({ subject: "", marks: "", comments: "", errors: "", submitSuccess: true });
+                this.loadReports();
             })
             .catch(err => {
                 this.setState({ errors: err.response.data })
