@@ -4,23 +4,17 @@
     padding-top: 100px;
 }
 
-/* .react-tabs__tab {
-    background-color: none;
-    margin-right:50px;
-    margin-left:50px;
-    padding: 20px;
+.information-content .react-tabs__tab {
     border-radius: none;
-    width: 200px;
-    color: white;
-    font-size: 20px;
     border: none;
-} */
+}
 
 .information-content .react-tabs__tab--selected {
     border-color: #28334aff;
-    color: gold;
+    color: #f65058ff;
     border-radius: 0;
-    background-color: #28334aff;
+    background-color: rgb(37, 24, 24);
+    filter: opacity(0.9);
     font-size: 30px;
 
 }
@@ -35,11 +29,11 @@
 .information-content {
     position: fixed;
     margin-top: 50px;
-    width: 365px;
-    margin-right: 20px;
-    background-color: #28334aff;
+    width: 960px;
+    margin: auto;
     border-radius: 10px;
-
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .information-content .react-tabs__tab-panel ul li {
@@ -48,10 +42,14 @@
     margin-top: 10px;
     padding-right: 20px;
     font-weight: normal;
-    text-decoration: underline;
 
 }
 
 .information-content .react-tabs__tab-panel ul {
     list-style: none;
+}
+
+.information-content .react-tabs {
+    width: 900px;
+    text-align: center;
 }

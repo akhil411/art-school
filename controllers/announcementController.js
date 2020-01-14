@@ -5,7 +5,6 @@ const validateAnnouncementInput = require("../validation/announcement");
 // Defining methods for the booksController
 module.exports = {
     create: function(req, res) {
-        console.log(req.body)
         const { errors, isValid } = validateAnnouncementInput(req.body);
 
         // Check validation

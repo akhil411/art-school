@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    height: 55px;
+    height: 70px;
 }
 
 .login-box form .input-field,.login-box form .input-password {

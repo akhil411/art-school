@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import API from './../utils/API';
 import classnames from "classnames";
 import TextField from '@material-ui/core/TextField';
-
+import Snackbar from '@material-ui/core/Snackbar';
+import Footer from './../components/Footer/Footer'
 
 class Enquiry extends Component {
     state = {
@@ -12,7 +13,7 @@ class Enquiry extends Component {
         subject: '',
         description: '',
         errors: {},
-        success: ''
+        submitSuccess: false
     };
 
     handleInputChange = (event) => {
@@ -35,18 +36,25 @@ class Enquiry extends Component {
         };
         API.submitEnquiry(newEnquiry)
             .then(res => {
-                alert("Your Enquiry has been sent successfully, Thanks.");
-                window.location.reload();
+                this.setState({ name: "", email: "", contactNumber: "", subject: "", description:"", errors:"", submitSuccess: true });
             })
             .catch(err => {
                 this.setState({ errors: err.response.data })
             });
     };
 
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+        this.setState({ submitSuccess: false })
+    };
+
     render() {
         const { errors } = this.state;
 
         return (
+            <div>
             <div className="homepage-content">
                 <div className="common-page-header"></div>
                 <div className="enquiry-hero-image"></div>
@@ -142,6 +150,12 @@ class Enquiry extends Component {
                             </form>
                         </div>
                     </div>
+                    <Snackbar
+                        open={this.state.submitSuccess}
+                        autoHideDuration={3000}
+                        onClose={this.handleClose}
+                        message="&#10004; Enquiry Submitted Successfully"
+                    />
                     <div className="grid-block-right">
                         <div className="location-map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26545.43180066334!2d150.98016323086455!3d-33.73018782318434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12a3ef6f0260a9%3A0x5017d681632b030!2sCastle%20Hill%20NSW%202154!5e0!3m2!1sen!2sau!4v1578567185026!5m2!1sen!2sau" width="400" height="210" frameborder="0" allowfullscreen=""></iframe>
@@ -158,7 +172,8 @@ class Enquiry extends Component {
                         </div>
                     </div>
                 </div>
-
+                </div>
+                <Footer />
             </div>
         );
     };

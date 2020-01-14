@@ -142,7 +142,7 @@ class Dashboard extends Component {
                           case "student":
                             return (
                               <div>
-                                <Link to="/register">
+                                <Link to="/dashboard/student-account">
                                   <h5>View Reports</h5>
                                 </Link>
                               </div>
@@ -150,8 +150,8 @@ class Dashboard extends Component {
                           case "staff":
                             return (
                               <div>
-                                <Link to="/register">
-                                  <h5>Manage Reports</h5>
+                                <Link to="/dashboard/student-reports">
+                                  <h5>Student Reports</h5>
                                 </Link>
                                 <Link to="/dashboard/manage-website">
                                   <h5>Manage Website</h5>

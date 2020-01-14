@@ -1,0 +1,9 @@
+.news-content li a, .news-content li {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.news-content li {
+    list-style: disc;
+}

@@ -6,3 +6,7 @@
 .react-tabs__tab-panel img {
     width: 100px;
 }
+
+.weather-content {
+    padding-top: 50px;
+}

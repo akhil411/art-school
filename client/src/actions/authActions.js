@@ -9,7 +9,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 export const registerUser = (userData, history) => dispatch => {
   console.log(userData);
   API.registerUser(userData)
-    .then(res => history.push("/"))
+    .then(res => window.location.reload())
     .catch(err =>
       dispatch({
         type: GET_ERRORS,
