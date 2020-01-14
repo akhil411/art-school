@@ -35,4 +35,13 @@
 <li>Multer
 <li>bcrypt
 
+<h3>Key Skills Demonstrated in this Project</h3>
+<li>Set Authentication using Redux, JSON Web Token and Passport
+<li>Amazon S3 Web Service for image upload
+<li>Demonstrated the use of React Context in Information Component
+<li>Material-UI used throughout the website
 
+<h3>To Do/ Further Development</h3>
+<li>Sending mail to the user after submitting Online Enquiry
+<li>Other Inner Pages Development
+<li>Further Styling of the Website
