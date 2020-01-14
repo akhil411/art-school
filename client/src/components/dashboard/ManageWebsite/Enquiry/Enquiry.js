@@ -70,6 +70,7 @@ class Enquiry extends Component {
                                 <p><strong>Email: </strong>{data.email}</p>
                                 <p><strong>Contact Number: </strong>{data.contactNumber}</p>
                                 <p><strong>Description:</strong> {data.description}</p>
+                                <p><strong>Submitted At:</strong> {data.created}</p>
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>

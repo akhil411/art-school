@@ -145,7 +145,7 @@ class Posts extends Component {
 								</IconButton>
 							}
 							title={post.user.name}
-							subheader={post.createdAt}
+							subheader={post.created}
 						/>
 						{post.upload ? (
 							<CardMedia

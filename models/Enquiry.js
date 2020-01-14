@@ -23,6 +23,9 @@ const EnquirySchema = new Schema({
     type: String,
     required: true
   },
+  created:{
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now

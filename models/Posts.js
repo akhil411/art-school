@@ -31,6 +31,9 @@ const PostsSchema = new Schema({
       }
     }]
   },
+  created:{
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now

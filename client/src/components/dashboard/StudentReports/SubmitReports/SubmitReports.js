@@ -204,6 +204,7 @@ class SubmitReport extends Component {
                                         <p><strong>Subject : </strong>{data.subject}</p>
                                         <p><strong>Marks : </strong>{data.marks}</p>
                                         <p><strong>Comments : </strong>{data.comments}</p>
+                                        <p><strong>Created On : </strong>{data.created}</p>
                                         <button className="modal-call-button delete-announcement"
                                             data-toggle="modal"
                                             data-target="#deleteModalCenter"

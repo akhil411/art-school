@@ -23,6 +23,9 @@ const ReportsSchema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: 'users'
   },
+  created:{
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now

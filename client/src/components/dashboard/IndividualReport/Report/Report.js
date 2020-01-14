@@ -55,6 +55,7 @@ class Report extends Component {
                                         <p><strong>Marks : </strong>{data.marks}</p>
                                         <p><strong>Report By : </strong>{data.teacherId.name}</p>
                                         <p><strong>Comments : </strong>{data.comments}</p>
+                                        <p><strong>Created On : </strong>{data.created}</p>
                                     </Typography>
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>

@@ -91,6 +91,7 @@ class ViewReports extends Component {
                                         <p><strong>Subject : </strong>{data.subject}</p>
                                         <p><strong>Marks : </strong>{data.marks}</p>
                                         <p><strong>Report By : </strong>{data.teacherId.name}</p>
+                                        <p><strong>Created On : </strong>{data.created}</p>
                                         <p><strong>Comments : </strong>{data.comments}</p>
                                     </Typography>
                                 </ExpansionPanelDetails>
