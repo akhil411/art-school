@@ -12,14 +12,7 @@ class Report extends Component {
     constructor() {
         super();
         this.state = {
-            errors: {},
-            students: [],
-            subject: '',
-            marks: '',
-            comments: '',
-            submitSuccess: false,
             reports: [],
-            deleteId:''
         }
     }
 

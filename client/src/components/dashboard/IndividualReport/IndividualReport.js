@@ -50,8 +50,8 @@ class IndividualReport extends Component {
                 <TabPanel>
                   <Report userId={this.props.auth.user.id}/>
                 </TabPanel>
-                  <UpdatePassword userId={this.props.auth.user.id}/>
                 <TabPanel>
+                  <UpdatePassword userId={this.props.auth.user.id}/>
                 </TabPanel>
             </Tabs>
         </div>

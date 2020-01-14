@@ -5,7 +5,6 @@ const validateReportsInput = require("../validation/reports");
 // Defining methods for the booksController
 module.exports = {
     create: function(req, res) {
-        console.log(req.body)
         const { errors, isValid } = validateReportsInput(req.body);
 
         // Check validation

@@ -1,9 +1,17 @@
 const db = require("../models");
 const axios = require("axios");
+const validatePostInput = require("../validation/posts");
 
 // Defining methods for the booksController
 module.exports = {
     create: function(req, res) {
+      const { errors, isValid } = validatePostInput(req.body);
+
+      // Check validation
+      if (!isValid) {
+          return res.status(400).json(errors);
+      }
+
       if (req.body.name) {
         db.Uploads
           .create({ name: req.body.name, url:req.body.url })

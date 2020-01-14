@@ -72,5 +72,8 @@ export default {
     },
     deleteReport: function(id) {
         return axios.delete("/api/reports/reports/" + id);
+    },
+    updatePassword: function(postdata) {
+        return axios.post("/api/users/password", postdata)
     }
 };

@@ -17,4 +17,7 @@ router.route("/users")
   router.route("/students/:id")
   .get(usersController.findStudents);
 
+  router.route("/password")
+  .post(usersController.updatePassword);
+
 module.exports = router;
