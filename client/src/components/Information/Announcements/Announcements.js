@@ -18,7 +18,6 @@ class ModalAnnouncements extends Component {
         API.getAnnouncements()
         .then(res => {
             this.setState({ announcements: res.data })
-            console.log(res.data)
         })
         .catch(err => {
             console.log(err)

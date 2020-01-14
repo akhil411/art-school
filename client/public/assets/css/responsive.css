@@ -1,0 +1,175 @@
+@media screen and (min-width: 1084px) {
+    .right-section {
+      min-width:600px;
+    }
+  }
+
+
+@media screen and (max-width: 1083px) and (min-width: 768px) {
+    .dashboard-container .col-md-9 {
+        flex: 0 0 95% !important;
+        max-width: 100% !important;
+    }
+    .dashboard-container .col-md-6 {
+        flex: 0 0 75% !important;
+        max-width: 75% !important;
+    }
+    .right-section {
+        min-width:535px;
+      }
+    .MuiPaper-root .media {
+        width: 480px;
+    }
+    .grid-contents {
+        width: 740px;
+    }
+    .announcements-information, .information-content, .information-content .react-tabs, .modal-announcements{
+        width: 750px !important;
+    }
+    .modal-announcements {
+        padding-left: 20px;
+    }
+    .page-heading, .course-more-details, .course-details, .grid-container, .manage-website-wrapper {
+        width: 700px !important;
+    }
+    .enquiry-container h1, .grid-block-left .page-heading, .location-map iframe, .announcements-section input {
+        width: 300px !important;
+    }
+    .website-content .react-tabs__tab-list li {
+        width: 270px !important;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+    .dashboard-container .left-section {
+        position: unset;
+    }
+    .blog-submit .modal-call-button {
+        float: left;
+      }
+      .MuiPaper-root .media {
+        width: 400px;
+    }
+    .right-section {
+        margin: auto;
+      }
+      .hamburger-menu {
+        right: 30px !important;
+    }
+    .announcements-logo {
+        right: 70px !important;
+    }
+    .grid-contents {
+        width: 460px !important;
+    }
+    .grid-contents .item1 {
+        grid-area: 1 / 1 / 1 / 1 !important;
+    }
+    .grid-contents .item2, .grid-block-right {
+        grid-area: 2 / 1 / 2 / 1 !important;
+        padding-left: 30px !important;
+    }
+    .grid-contents h4 {
+        font-size: 20px !important;
+        padding: 0 !important;
+    }
+    .announcements-information, .information-content, .information-content .react-tabs, .modal-announcements{
+        width: 300px !important;
+    }
+    .information-content .react-tabs__tab--selected {
+        font-size: 15px !important;
+    }
+    .react-tabs__tab {
+        padding: 6px 8px !important;
+    }
+    .modal-announcements h5, .news-content li a, .news-content li {
+        font-size: 15px !important;
+    }
+    .grid-container, .manage-website-wrapper, label + .MuiInput-formControl{
+        width: 280px !important;
+    }
+    .page-heading {
+        margin: unset;
+    }
+    .enquiry-container h1, .grid-block-left .page-heading, .location-map iframe {
+        width: 250px !important;
+    }
+    .enquiry-contact p, .enquiry-contact a {
+        font-size: 15px;
+    }
+    .website-content .react-tabs {
+        display: unset !important;
+    }
+    .website-content .react-tabs__tab-list {
+        flex-direction: row !important;
+    }
+    .website-content .react-tabs__tab-list li {
+        width: 160px !important;
+    }
+    .manage-website-wrapper .react-tabs__tab--selected {
+        font-size: 17px !important;
+    }
+    .announcements-section h3{
+        font-size: 24px;
+    }
+    .react-tabs__tab {
+        padding: 6px 0px !important;
+    }
+    .MuiAutocomplete-inputRoot {
+        width: 270px !important;
+    }
+
+}
+
+@media screen and (max-width: 767px) and (min-width: 480px) {
+    .page-heading, .course-more-details, .course-details {
+        width: 400px !important;
+    }
+    .course-details .block-one, .course-details .block-two {
+        min-height: 200px;
+        width: 185px;
+    }
+}
+
+@media screen and (max-width: 479px) and (min-width: 320px) {
+      .MuiPaper-root .media {
+        width: 250px;
+        height: 300px;
+    }
+    .header-contents {
+        text-align: unset !important;
+    }
+    .header-contents .header-text {
+        font-size: 30px !important;
+        padding-left: 10px !important;
+    }
+    .hamburger-menu {
+        top: 15px !important;
+    }
+    .announcements-logo {
+        top: 7px !important;
+    }
+    .dashboard-container {
+        padding-top: 40px !important;
+    }
+    .page-heading, .course-more-details, .course-details {
+        width: 280px !important;
+    }
+    .course-details .block-one, .course-details .block-two {
+        min-height: 200px;
+        width: 185px;
+    }
+    .page-heading h1, .course-more-details h2 {
+        font-size: 1.5rem !important;
+    }
+    .course-details .block-two {
+        grid-area: 2 /1 / span 2 / span 1;
+        margin-top: 25px !important;
+    }
+    .course-details .block-two, .course-details .block-one {
+        margin: auto;
+    }
+    .blog-submit input {
+        width: 250px;
+    }
+}

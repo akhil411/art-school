@@ -47,7 +47,7 @@ class Dashboard extends Component {
         API.createPosts({text:this.state.text, user:this.props.auth.user.id, name:imageName, url:imageUrl})
             .then(res =>{
               this.setState({ text: "", errors: "", submitSuccess: true });
-              setTimeout(function(){window.location.reload();}, 2000);
+              setTimeout(function(){window.location.reload();}, 1000);
             })
             .catch(err => {
               this.setState({ errors: err.response.data })
@@ -106,7 +106,6 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
-    console.log(user)
     const  role  = user.role;
     const { errors } = this.state;
     

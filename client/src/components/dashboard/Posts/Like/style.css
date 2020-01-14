@@ -7,3 +7,7 @@
 .like-button, .like-text {
     cursor: pointer;
 }
+
+.like-section  .like-button img {
+    width: 25px;
+}

@@ -7,21 +7,31 @@ class Like extends Component {
         super();
             this.state = {
                 likeCount:'',
-                likes:[]
+                likes:[],
+                liked:false,
             }
     }
 
     componentDidMount = () => {
         this.setState({likeCount:this.props.likes.like.length});
-        this.setState({likes:this.props.likes.like})
+        this.setState({likes:this.props.likes.like}, () => {
+         if (this.state.likes.some((id) => {
+                return id._id === this.props.userId;
+            })) {
+                this.setState({liked: true});
+            } 
+        })
     }
 
     onClick = () => {
-        API.setLike({userId: this.props.userId, postId: this.props.postId})
-        .then(res => {
-            this.setState({likeCount:res.data[0].likes.like.length});
-        })
-        .catch(err => console.log(err));
+        if (! this.state.liked) {
+            API.setLike({userId: this.props.userId, postId: this.props.postId})
+            .then(res => {
+                this.setState({likeCount:res.data[0].likes.like.length});
+                this.setState({liked: true});
+            })
+            .catch(err => console.log(err));
+        }
     }
 
     likeOnClick = () => {
@@ -42,7 +52,8 @@ class Like extends Component {
        
         return (
             <div className="like-section">
-                <div className="like-button" onClick={this.onClick}>&#128077;  </div>
+                {/* <div className="like-button" onClick={this.onClick}>&#128077;  </div> */}
+                <div className="like-button" onClick={this.onClick}><img src={( this.state.liked ? '../assets/images/liked.png' : '../assets/images/like.png') }></img>  </div>
                 <h6 onClick={this.likeOnClick} className="like-text" data-toggle="modal" data-target="#likeModalCenter">{this.state.likeCount} Likes</h6>
             </div>
         )

@@ -1,6 +1,7 @@
 const db = require("../models");
 const axios = require("axios");
 const validateReportsInput = require("../validation/reports");
+const moment = require("moment")
 
 // Defining methods for the booksController
 module.exports = {
@@ -11,8 +12,10 @@ module.exports = {
         if (!isValid) {
             return res.status(400).json(errors);
         }
+        var now = moment();
+        var creatednow = now.format("MMMM Do YYYY, h:mm a");
         db.Reports
-          .create({ subject: req.body.subject, marks:req.body.marks, comments:req.body.marks, teacherId:req.body.teacherId, studentId:req.body.studentId })
+          .create({ subject: req.body.subject, marks:req.body.marks, comments:req.body.marks, teacherId:req.body.teacherId, studentId:req.body.studentId, created:creatednow })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       

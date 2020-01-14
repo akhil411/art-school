@@ -1,6 +1,7 @@
 const db = require("../models");
 const axios = require("axios");
 const validatePostInput = require("../validation/posts");
+const moment = require("moment");
 
 // Defining methods for the booksController
 module.exports = {
@@ -12,19 +13,22 @@ module.exports = {
           return res.status(400).json(errors);
       }
 
+      var now = moment();
+      var creatednow = now.format("MMMM Do YYYY, h:mm a");
+
       if (req.body.name) {
         db.Uploads
           .create({ name: req.body.name, url:req.body.url })
           .then(function(data) {
             return (
-                    db.Posts.create({ text:req.body.text, user: req.body.user, upload: data._id })
+                    db.Posts.create({ text:req.body.text, user: req.body.user, upload: data._id, created:creatednow })
                     .then(dbModel => res.json(dbModel))
                     .catch(err => res.status(422).json(err))
             ) 
           })
           .catch(err => res.status(422).json(err));
       } else {
-        db.Posts.create({ text:req.body.text, user: req.body.user})
+        db.Posts.create({ text:req.body.text, user: req.body.user, created:creatednow })
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       }

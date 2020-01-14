@@ -29,3 +29,7 @@
     cursor: pointer;
 }
 
+.modal-likes-content {
+    max-height: 400px;
+    overflow: auto;
+}
