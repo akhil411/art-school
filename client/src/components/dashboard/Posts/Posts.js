@@ -89,9 +89,9 @@ class Posts extends Component {
 
 		return (
 			<div>
-			<div className="modal fade" id="likeModalCenter" tabindex="-1" role="dialog" aria-labelledby="likeModalCenterTitle" aria-hidden="true">
+			<div className="modal fade" id="likeModalCenter" role="dialog" aria-labelledby="likeModalCenterTitle" aria-hidden="true">
 				<div className="modal-dialog modal-dialog-centered" role="document">
-					<div className="modal-content">
+					<div className="modal-content modal-likes-content">
 						<div className="modal-header">
 							<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>

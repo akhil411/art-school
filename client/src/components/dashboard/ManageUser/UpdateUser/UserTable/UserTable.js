@@ -70,8 +70,6 @@ export default function StickyHeadTable(props) {
                     
                   })}
                   <div className="user-actions">
-                    <button className="update-user">Update</button>
-                    <button className="delete-user">Delete</button>
                   </div>
                 </TableRow>
               );

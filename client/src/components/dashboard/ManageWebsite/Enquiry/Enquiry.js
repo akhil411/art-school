@@ -14,7 +14,7 @@ class Enquiry extends Component {
             enquiry: [],
             currentEnquiry:[],
             currentPage:"1",
-            postPerPage:"3",
+            postPerPage:"5",
             pageNumbers:[]
         }
 
