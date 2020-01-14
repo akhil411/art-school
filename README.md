@@ -1,1 +1,1 @@
-# school
+<h1>Art School</h1>
