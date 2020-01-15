@@ -1,79 +1,79 @@
 import axios from "axios";
 
 export default {
-    registerUser: function(userData) {
-        return   axios.post("/api/users/register", userData);
+    registerUser: function (userData) {
+        return axios.post("/api/users/register", userData);
     },
-    loginUser: function(userData) {
-        return   axios.post("/api/users/login", userData);
+    loginUser: function (userData) {
+        return axios.post("/api/users/login", userData);
     },
-    getNews: function(query) {
-        return   axios.get("/api/news/news", { params: { q: query } });
+    getNews: function (query) {
+        return axios.get("/api/news/news", { params: { q: query } });
     },
-    getWeather: function(query) {
-        return   axios.get("/api/weather/weather", { params: { q: query } });
+    getWeather: function (query) {
+        return axios.get("/api/weather/weather", { params: { q: query } });
     },
-    getRoles: function() {
+    getRoles: function () {
         return axios.get("/api/roles/roles");
     },
-    getUsers: function() {
+    getUsers: function () {
         return axios.get("/api/users/users");
     },
-    getUserType: function(id) {
+    getUserType: function (id) {
         return axios.get("/api/users/users/" + id);
-      },
-    getStudentUsers: function(id) {
+    },
+    getStudentUsers: function (id) {
         return axios.get("/api/users/students/" + id);
-      },
-    createPosts: function(postdata) {
-        return   axios.post("/api/posts/posts", postdata);
     },
-    getPosts: function() {
-        return   axios.get("/api/posts/posts");
+    createPosts: function (postdata) {
+        return axios.post("/api/posts/posts", postdata);
     },
-    fileUpload: function(uploadsData) {
+    getPosts: function () {
+        return axios.get("/api/posts/posts");
+    },
+    fileUpload: function (uploadsData) {
         return axios.post("/api/uploads/uploads", uploadsData)
     },
-    setLike: function(userId) {
+    setLike: function (userId) {
         return axios.post("/api/posts/like", userId)
     },
-    getLikes: function(id) {
+    getLikes: function (id) {
         return axios.get("/api/posts/getLikes/" + id)
     },
-    setComment: function(userID) {
+    setComment: function (userID) {
         return axios.post("/api/posts/comment", userID)
     },
-    loadComments: function(id) {
+    loadComments: function (id) {
         return axios.get("/api/posts/comments/" + id);
     },
-    submitEnquiry: function(enquiry) {
+    submitEnquiry: function (enquiry) {
         return axios.post("/api/enquiry/enquiry", enquiry);
     },
-    getEnquiry: function() {
+    getEnquiry: function () {
         return axios.get("/api/enquiry/enquiry");
     },
-    postAnnouncement: function(postdata) {
+    postAnnouncement: function (postdata) {
         return axios.post("/api/announcements/announcements", postdata);
     },
-    getAnnouncements: function() {
+    getAnnouncements: function () {
         return axios.get("/api/announcements/announcements");
     },
-    deleteAnnouncement: function(id) {
+    deleteAnnouncement: function (id) {
         return axios.delete("/api/announcements/announcements/" + id);
     },
-    submitReport: function(postdata) {
+    submitReport: function (postdata) {
         return axios.post("/api/reports/reports", postdata)
     },
-    getReports: function(id) {
+    getReports: function (id) {
         return axios.get("/api/reports/reports/" + id);
     },
-    getStudentReports: function(id) {
+    getStudentReports: function (id) {
         return axios.get("/api/reports/student-reports/" + id);
     },
-    deleteReport: function(id) {
+    deleteReport: function (id) {
         return axios.delete("/api/reports/reports/" + id);
     },
-    updatePassword: function(postdata) {
+    updatePassword: function (postdata) {
         return axios.post("/api/users/password", postdata)
     }
 };

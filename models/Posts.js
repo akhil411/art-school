@@ -4,20 +4,20 @@ const Schema = mongoose.Schema;
 // Create Schema
 const PostsSchema = new Schema({
   text: {
-    type: String 
+    type: String
   },
-  user: { 
-    type: Schema.Types.ObjectId, 
+  user: {
+    type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  upload: { 
-    type: Schema.Types.ObjectId, 
+  upload: {
+    type: Schema.Types.ObjectId,
     ref: 'uploads'
   },
   likes: {
-    like:[{
-    type: Schema.Types.ObjectId,
-    ref: 'users'
+    like: [{
+      type: Schema.Types.ObjectId,
+      ref: 'users'
     }]
   },
   comments: {
@@ -25,13 +25,13 @@ const PostsSchema = new Schema({
       text: {
         type: String
       },
-      user:{
-      type: Schema.Types.ObjectId,
-      ref: 'users'
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
       }
     }]
   },
-  created:{
+  created: {
     type: String,
   },
   createdAt: {
@@ -41,5 +41,5 @@ const PostsSchema = new Schema({
 });
 
 const Posts = mongoose.model("posts", PostsSchema);
-        
+
 module.exports = Posts;

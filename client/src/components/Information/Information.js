@@ -7,28 +7,27 @@ import Weather from './Weather/Weather';
 import ModalAnnouncements from './Announcements/Announcements'
 
 function Information(props) {
-  return (
-    <div className="information-content">
-        <Tabs>
-            <TabList>
-                <Tab>Announcements</Tab>
-                <Tab>News</Tab>
-                <Tab>Weather</Tab>
-            </TabList>
+    return (
+        <div className="information-content">
+            <Tabs>
+                <TabList>
+                    <Tab>Announcements</Tab>
+                    <Tab>News</Tab>
+                    <Tab>Weather</Tab>
+                </TabList>
 
-            <TabPanel>
-                <ModalAnnouncements />
-            </TabPanel>   
-            <TabPanel>
-                <News />
-            </TabPanel>
-            <TabPanel>
-                <Weather />
-            </TabPanel>
-        </Tabs>
-
-    </div>
-  );
+                <TabPanel>
+                    <ModalAnnouncements />
+                </TabPanel>
+                <TabPanel>
+                    <News />
+                </TabPanel>
+                <TabPanel>
+                    <Weather />
+                </TabPanel>
+            </Tabs>
+        </div>
+    );
 }
 
 export default Information;

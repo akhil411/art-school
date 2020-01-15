@@ -4,14 +4,11 @@ const routes = require("./routes");
 const passport = require("passport");
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+const db = require("./config/keys").mongoURI;
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-
-const db = require("./config/keys").mongoURI;
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -31,6 +28,6 @@ mongoose
   .catch(err => console.log(err));
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });

@@ -18,12 +18,12 @@ const EnquirySchema = new Schema({
   subject: {
     type: String,
     required: true
-  }, 
+  },
   description: {
     type: String,
     required: true
   },
-  created:{
+  created: {
     type: String,
   },
   createdAt: {

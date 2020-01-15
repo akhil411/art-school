@@ -12,10 +12,10 @@ class Enquiry extends Component {
         super(props);
         this.state = {
             enquiry: [],
-            currentEnquiry:[],
-            currentPage:"1",
-            postPerPage:"5",
-            pageNumbers:[]
+            currentEnquiry: [],
+            currentPage: "1",
+            postPerPage: "5",
+            pageNumbers: []
         }
 
     }
@@ -27,11 +27,11 @@ class Enquiry extends Component {
     loadCurrentEnquiry = () => {
         const lastItem = this.state.currentPage * this.state.postPerPage;
         const firstItem = lastItem - this.state.postPerPage;
-        this.setState({currentEnquiry:this.state.enquiry.slice(firstItem, lastItem)});
+        this.setState({ currentEnquiry: this.state.enquiry.slice(firstItem, lastItem) });
     }
 
     paginate = (number) => {
-        this.setState({currentPage:number}, () => {
+        this.setState({ currentPage: number }, () => {
             this.loadCurrentEnquiry();
         });
     }
@@ -40,7 +40,7 @@ class Enquiry extends Component {
         API.getEnquiry()
             .then(res => {
                 this.setState({ enquiry: res.data }, () => {
-                    for(let i=1; i<= Math.ceil(this.state.enquiry.length / this.state.postPerPage); i++) {
+                    for (let i = 1; i <= Math.ceil(this.state.enquiry.length / this.state.postPerPage); i++) {
                         this.state.pageNumbers.push(i);
                     }
                 });
@@ -74,16 +74,16 @@ class Enquiry extends Component {
                             </Typography>
                         </ExpansionPanelDetails>
                     </ExpansionPanel>
-               ))}
-               <div className="pagination">
+                ))}
+                <div className="pagination">
                     <ul className='pagination'>
                         {this.state.pageNumbers.map(number => (
-                        <li key={number} className='page-item' onClick={() => this.paginate(number)}>
-                            <span  className='page-link'>{number}</span>
-                        </li>
+                            <li key={number} className='page-item' onClick={() => this.paginate(number)}>
+                                <span className='page-link'>{number}</span>
+                            </li>
                         ))}
                     </ul>
-               </div>
+                </div>
             </div>
         );
     }

@@ -5,9 +5,9 @@ import API from './../../../utils/API';
 class ModalAnnouncements extends Component {
     constructor() {
         super();
-            this.state = {
-                announcements:[],
-            }
+        this.state = {
+            announcements: [],
+        }
     }
 
     componentDidMount = () => {
@@ -16,16 +16,16 @@ class ModalAnnouncements extends Component {
 
     loadAnnouncements = () => {
         API.getAnnouncements()
-        .then(res => {
-            this.setState({ announcements: res.data })
-        })
-        .catch(err => {
-            console.log(err)
-        });
+            .then(res => {
+                this.setState({ announcements: res.data })
+            })
+            .catch(err => {
+                console.log(err)
+            });
     }
-    
-    render () {
-       
+
+    render() {
+
         return (
             <div className="modal-announcements">
                 {this.state.announcements.map(data => (

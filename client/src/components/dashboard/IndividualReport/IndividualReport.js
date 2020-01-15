@@ -13,49 +13,48 @@ import UpdatePassword from './../UpdatePassword/UpdatePassword'
 
 class IndividualReport extends Component {
 
-    constructor(props) {
-        super(props);
-            this.state = {
-                
-            }
-    }
-
-  componentDidMount() {
-    if(this.props.auth.user.role == "student") {
-      console.log(this.props.auth.user.id)
-    } else {
-        this.props.history.push("/dashboard");
+  constructor(props) {
+    super(props);
+    this.state = {
     }
   }
-  
+
+  componentDidMount() {
+    if (this.props.auth.user.role == "student") {
+      console.log(this.props.auth.user.id)
+    } else {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   render() {
     return (
       <div className="website-content">
         <div className="manage-users-header-background"></div>
         <div className="manage-website-wrapper">
-            <div>
-                <Breadcrumbs aria-label="breadcrumb">
-                <Link color="inherit" href="/dashboard">
-                    Dashboard
+          <div>
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link color="inherit" href="/dashboard">
+                Dashboard
                 </Link>
-                <Typography color="textPrimary">Account</Typography>
-                </Breadcrumbs>
-            </div>
-            <Tabs>
-                <TabList>
-                    <Tab>View Reports</Tab>
-                    <Tab>Update Password</Tab>
-                </TabList>
-                    
-                <TabPanel>
-                  <Report userId={this.props.auth.user.id}/>
-                </TabPanel>
-                <TabPanel>
-                  <UpdatePassword userId={this.props.auth.user.id}/>
-                </TabPanel>
-            </Tabs>
+              <Typography color="textPrimary">Account</Typography>
+            </Breadcrumbs>
+          </div>
+          <Tabs>
+            <TabList>
+              <Tab>View Reports</Tab>
+              <Tab>Update Password</Tab>
+            </TabList>
+
+            <TabPanel>
+              <Report userId={this.props.auth.user.id} />
+            </TabPanel>
+            <TabPanel>
+              <UpdatePassword userId={this.props.auth.user.id} />
+            </TabPanel>
+          </Tabs>
         </div>
-    </div>
+      </div>
     );
   }
 }

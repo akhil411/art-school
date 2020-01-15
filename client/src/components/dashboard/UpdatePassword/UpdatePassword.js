@@ -30,7 +30,7 @@ class Report extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         const newPassword = {
-            userId:this.props.userId,
+            userId: this.props.userId,
             oldPassword: this.state.oldPassword,
             newPassword1: this.state.newPassword1,
             newPassword2: this.state.newPassword2,

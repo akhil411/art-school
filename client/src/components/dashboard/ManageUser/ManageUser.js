@@ -13,51 +13,50 @@ import Register from './Register/Register';
 
 class ManageUser extends Component {
 
-    constructor(props) {
-        super(props);
-            this.state = {
-                users: [],
-                roles:[]
-            }
-    }
-
-  componentDidMount() {
-    if(this.props.auth.user.role == "admin" || this.props.auth.user.role == "staff") {
-      console.log("success")
-    } else {
-        this.props.history.push("/dashboard");
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      roles: []
     }
   }
 
- 
+  componentDidMount() {
+    if (this.props.auth.user.role == "admin" || this.props.auth.user.role == "staff") {
+      console.log("success")
+    } else {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   render() {
     return (
       <div className="website-content">
-      <div className="manage-users-header-background"></div>
-      <div className="manage-website-wrapper">
+        <div className="manage-users-header-background"></div>
+        <div className="manage-website-wrapper">
           <div>
-              <Breadcrumbs aria-label="breadcrumb">
+            <Breadcrumbs aria-label="breadcrumb">
               <Link color="inherit" href="/dashboard">
-                  Dashboard
+                Dashboard
               </Link>
               <Typography color="textPrimary">Manage-Users</Typography>
-              </Breadcrumbs>
+            </Breadcrumbs>
           </div>
           <Tabs>
-              <TabList>
-                  <Tab>Register User</Tab>
-                  <Tab>Update User</Tab>
-              </TabList>
+            <TabList>
+              <Tab>Register User</Tab>
+              <Tab>Update User</Tab>
+            </TabList>
 
-              <TabPanel>
-                <Register />
-              </TabPanel>
-              <TabPanel>
-                <UpdateUser />
-              </TabPanel>
+            <TabPanel>
+              <Register />
+            </TabPanel>
+            <TabPanel>
+              <UpdateUser />
+            </TabPanel>
           </Tabs>
+        </div>
       </div>
-  </div>
     );
   }
 }

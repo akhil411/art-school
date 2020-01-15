@@ -21,7 +21,7 @@ class ViewReports extends Component {
             comments: '',
             submitSuccess: false,
             reports: [],
-            deleteId:''
+            deleteId: ''
         }
     }
 
@@ -62,16 +62,15 @@ class ViewReports extends Component {
                 <div className="add-announcements">
                     <h3>Reports</h3>
                     <div className="submit-report">
-                            <Autocomplete
-                                id="free-solo-demo"
-                                options={this.state.students}
-                                onChange={this.handleChange}
-                                getOptionLabel={option => option.name}
-                                renderInput={params => (
-                                    <TextField {...params} label="Select student" margin="normal" variant="outlined" fullWidth />
-                                )}
-                            />
-                            
+                        <Autocomplete
+                            id="free-solo-demo"
+                            options={this.state.students}
+                            onChange={this.handleChange}
+                            getOptionLabel={option => option.name}
+                            renderInput={params => (
+                                <TextField {...params} label="Select student" margin="normal" variant="outlined" fullWidth />
+                            )}
+                        />
                     </div>
                     <div className="view-announcements">
                         <h3>Submitted Reports:</h3>

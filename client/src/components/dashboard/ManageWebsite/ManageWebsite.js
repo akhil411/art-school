@@ -14,54 +14,54 @@ import UpdatePassword from './../UpdatePassword/UpdatePassword'
 
 class ManageWebsite extends Component {
 
-    constructor(props) {
-        super(props);
-            this.state = {
-                
-            }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
 
-  componentDidMount() {
-    if(this.props.auth.user.role == "admin" || this.props.auth.user.role == "staff") {
-      console.log("success")
-    } else {
-        this.props.history.push("/dashboard");
     }
   }
 
-  
+  componentDidMount() {
+    if (this.props.auth.user.role == "admin" || this.props.auth.user.role == "staff") {
+      console.log("success")
+    } else {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+
   render() {
     return (
       <div className="website-content">
         <div className="manage-users-header-background"></div>
         <div className="manage-website-wrapper">
-            <div>
-                <Breadcrumbs aria-label="breadcrumb">
-                <Link color="inherit" href="/dashboard">
-                    Dashboard
+          <div>
+            <Breadcrumbs aria-label="breadcrumb">
+              <Link color="inherit" href="/dashboard">
+                Dashboard
                 </Link>
-                <Typography color="textPrimary">Manage-Website</Typography>
-                </Breadcrumbs>
-            </div>
-            <Tabs>
-                <TabList>
-                    <Tab>Announcements</Tab>
-                    <Tab>Online Enquiry</Tab>
-                    <Tab>Update Password</Tab>
-                </TabList>
+              <Typography color="textPrimary">Manage-Website</Typography>
+            </Breadcrumbs>
+          </div>
+          <Tabs>
+            <TabList>
+              <Tab>Announcements</Tab>
+              <Tab>Online Enquiry</Tab>
+              <Tab>Update Password</Tab>
+            </TabList>
 
-                <TabPanel>
-                  <Announcements user={this.props.auth.user.name}/>
-                </TabPanel>
-                <TabPanel>
-                    <Enquiry />
-                </TabPanel>
-                <TabPanel>
-                  <UpdatePassword userId={this.props.auth.user.id}/>
-                </TabPanel>
-            </Tabs>
+            <TabPanel>
+              <Announcements user={this.props.auth.user.name} />
+            </TabPanel>
+            <TabPanel>
+              <Enquiry />
+            </TabPanel>
+            <TabPanel>
+              <UpdatePassword userId={this.props.auth.user.id} />
+            </TabPanel>
+          </Tabs>
         </div>
-    </div>
+      </div>
     );
   }
 }

@@ -67,7 +67,6 @@ export default function StickyHeadTable(props) {
                         {column.format && typeof value === 'number' ? column.format(value) : value}
                       </TableCell>
                     );
-                    
                   })}
                   <div className="user-actions">
                   </div>

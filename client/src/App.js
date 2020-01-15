@@ -46,22 +46,22 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-            <Router>
-            <div className="App">
+        <Router>
+          <div className="App">
             <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/courses" component={Courses} />
-                    <Route exact path="/online-enquiry" component={Enquiry} />
-                    <PrivateRoute exact path="/dashboard" component={UserDashboard} />
-                    <PrivateRoute path="/dashboard/manage-users" component={ManageUsers} />
-                    <PrivateRoute path="/dashboard/manage-website" component={ManageWebsite} />
-                    <PrivateRoute path="/dashboard/student-reports" component={StudentReport} />
-                    <PrivateRoute path="/dashboard/student-account" component={StudentAccount} />
-                    <Route path="*"><NoMatch /></Route>
-                </Switch>
-            </div>
-            </Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/courses" component={Courses} />
+              <Route exact path="/online-enquiry" component={Enquiry} />
+              <PrivateRoute exact path="/dashboard" component={UserDashboard} />
+              <PrivateRoute path="/dashboard/manage-users" component={ManageUsers} />
+              <PrivateRoute path="/dashboard/manage-website" component={ManageWebsite} />
+              <PrivateRoute path="/dashboard/student-reports" component={StudentReport} />
+              <PrivateRoute path="/dashboard/student-account" component={StudentAccount} />
+              <Route path="*"><NoMatch /></Route>
+            </Switch>
+          </div>
+        </Router>
       </Provider>
     );
   }

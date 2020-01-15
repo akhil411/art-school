@@ -3,10 +3,10 @@ const announcementController = require("../../controllers/announcementController
 const axios = require("axios");
 
 router.route("/announcements")
-.post(announcementController.create);
+  .post(announcementController.create);
 
 router.route("/announcements")
-.get(announcementController.findAll);
+  .get(announcementController.findAll);
 
 router.route("/announcements/:id")
   .delete(announcementController.remove);

@@ -6,12 +6,11 @@ class UserDashboard extends Component {
   render() {
     return (
       <div>
-        <Dashboard history= {this.props.history} />
+        <Dashboard history={this.props.history} />
         <Footer />
       </div>
     );
   };
 };
-
 
 export default UserDashboard;

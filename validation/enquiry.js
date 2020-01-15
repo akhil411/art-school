@@ -23,7 +23,7 @@ module.exports = function validateEnquiryInput(data) {
     errors.email = "Email is invalid";
   }
 
-  if (!Validator.isLength(data.contactNumber, { min: 10, max:10 })) {
+  if (!Validator.isLength(data.contactNumber, { min: 10, max: 10 })) {
     errors.contactNumber = "Please check your Contact Number";
   }
 

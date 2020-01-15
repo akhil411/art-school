@@ -24,7 +24,7 @@ class SubmitReport extends Component {
             comments: '',
             submitSuccess: false,
             reports: [],
-            deleteId:''
+            deleteId: ''
         }
     }
 
@@ -85,16 +85,16 @@ class SubmitReport extends Component {
             });
     }
 
-    deleteId =(id) => {
+    deleteId = (id) => {
         this.setState({ deleteId: id })
     }
 
     deleteReport = () => {
         API.deleteReport(this.state.deleteId)
-        .then(res =>
-          window.location.reload()
-        )
-        .catch(err => console.log(err));
+            .then(res =>
+                window.location.reload()
+            )
+            .catch(err => console.log(err));
     }
 
     handleClose = (event, reason) => {

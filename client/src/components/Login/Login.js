@@ -20,7 +20,7 @@ class Login extends Component {
     // If logged in and user navigates to Login page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
-        // return <Redirect to="/dashboard" />;
+      // return <Redirect to="/dashboard" />;
     }
   }
 
@@ -57,50 +57,50 @@ class Login extends Component {
     return (
       <div className="login-box">
         <form noValidate autoComplete="off" onSubmit={this.onSubmit}>
-            <div className="input-field input-email">
+          <div className="input-field input-email">
             <TextField
-                onChange={this.onChange}
-                value={this.state.email}
-                error={errors.email}
-                id="email"
-                type="email"
-                label="Email"
-                className={classnames("", {
+              onChange={this.onChange}
+              value={this.state.email}
+              error={errors.email}
+              id="email"
+              type="email"
+              label="Email"
+              className={classnames("", {
                 invalid: errors.email || errors.emailnotfound
-                })}
+              })}
             />
             <br></br>
             <span className="red-text">
-                {errors.email}
-                {errors.emailnotfound}
+              {errors.email}
+              {errors.emailnotfound}
             </span>
-            </div>
-            <div className="input-field input-password">
+          </div>
+          <div className="input-field input-password">
             <TextField
-                onChange={this.onChange}
-                value={this.state.password}
-                error={errors.password}
-                id="password"
-                type="password"
-                label="Password"
-                className={classnames("", {
+              onChange={this.onChange}
+              value={this.state.password}
+              error={errors.password}
+              id="password"
+              type="password"
+              label="Password"
+              className={classnames("", {
                 invalid: errors.password || errors.passwordincorrect
-                })}
+              })}
             />
             <br></br>
             <span className="red-text">
-                {errors.password}
-                {errors.passwordincorrect}
+              {errors.password}
+              {errors.passwordincorrect}
             </span>
-            </div>
-            <div className="login-button-section">
+          </div>
+          <div className="login-button-section">
             <button
-                type="submit"
-                className="login-button modal-call-button"
+              type="submit"
+              className="login-button modal-call-button"
             >
-                <span>Login </span>
+              <span>Login </span>
             </button>
-            </div>
+          </div>
         </form>
       </div>
     );
@@ -122,4 +122,3 @@ export default connect(
   mapStateToProps,
   { loginUser }
 )(Login);
-

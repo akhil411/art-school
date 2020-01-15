@@ -3,9 +3,9 @@ const enquiryController = require("../../controllers/enquiryController");
 const axios = require("axios");
 
 router.route("/enquiry")
-.post(enquiryController.submit);
+    .post(enquiryController.submit);
 
 router.route("/enquiry")
-.get(enquiryController.findAll);
+    .get(enquiryController.findAll);
 
 module.exports = router;

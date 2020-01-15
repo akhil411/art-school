@@ -5,32 +5,31 @@ import HeroVideo from "./../components/Hero/HeroVideo";
 
 class Home extends Component {
     state = {
-        width:''
-      };
+        width: ''
+    };
 
-  componentDidMount () {
-      this.setState({width:window.screen.width})
-  }    
+    componentDidMount() {
+        this.setState({ width: window.screen.width })
+    }
 
-  render() {
-    return (
-        <div className="homepage-content home-section">
-            {this.state.width < 768 ? (
-                <div>
-                    <HeroImage />
+    render() {
+        return (
+            <div className="homepage-content home-section">
+                {this.state.width < 768 ? (
+                    <div>
+                        <HeroImage />
+                    </div>
+                ) : (
+                        <div>
+                            <HeroVideo />
+                        </div>
+                    )}
+                <div className="login-section">
+                    <Login history={this.props.history} />
                 </div>
-            ):(
-                <div>
-                    <HeroVideo />
-                </div>
-            )}
-
-            <div className="login-section">
-                <Login history= {this.props.history} />
             </div>
-        </div>
-    );
-  };
+        );
+    };
 };
 
 export default Home;

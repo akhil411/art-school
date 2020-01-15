@@ -6,12 +6,11 @@ class StudentReport extends Component {
   render() {
     return (
       <div>
-        <StudentReports history= {this.props.history} />
+        <StudentReports history={this.props.history} />
         <Footer />
       </div>
     );
   };
 };
-
 
 export default StudentReport;

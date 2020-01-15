@@ -41,12 +41,12 @@ export default function CoureseOne() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-          The one-year Diploma offers both practical and theoretical courses, which have been developed in conjunction with the arts industry. 
-          It is designed to prepare you for a career in the visual arts or other related creative fields.
+            The one-year Diploma offers both practical and theoretical courses, which have been developed in conjunction with the arts industry.
+            It is designed to prepare you for a career in the visual arts or other related creative fields.
           <br></br>
-          <br></br>
-          A major focus is the production of a professional folio of work that reflects your personal creativity. The folio will display a sequential development, with emphasis 
-          on the acquisition of skills and the adaptation of those skills to the production of artworks with a sound personal philosophical base.
+            <br></br>
+            A major focus is the production of a professional folio of work that reflects your personal creativity. The folio will display a sequential development, with emphasis
+            on the acquisition of skills and the adaptation of those skills to the production of artworks with a sound personal philosophical base.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -60,12 +60,12 @@ export default function CoureseOne() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra 
-          sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra
+            sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
           <br></br>
-          <br></br>
-          Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex. 
-          Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
+            <br></br>
+            Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex.
+            Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -79,12 +79,12 @@ export default function CoureseOne() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra 
-          sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra
+            sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
           <br></br>
-          <br></br>
-          Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex. 
-          Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
+            <br></br>
+            Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex.
+            Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -98,12 +98,12 @@ export default function CoureseOne() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra 
-          sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra
+            sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
           <br></br>
-          <br></br>
-          Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex. 
-          Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
+            <br></br>
+            Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex.
+            Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -117,12 +117,12 @@ export default function CoureseOne() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra 
-          sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra
+            sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
           <br></br>
-          <br></br>
-          Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex. 
-          Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
+            <br></br>
+            Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex.
+            Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
@@ -136,12 +136,12 @@ export default function CoureseOne() {
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra 
-          sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in mauris eu mauris viverra
+            sollicitudin et sit amet ex. Nulla facilisi. Nulla nisi neque, pulvinar in tincidunt ac, consequat id lorem. Nullam tempus hendrerit efficitur. Vivamus interdum lorem ornare eros vestibulum, vel interdum lorem pulvinar. Aenean mattis, nibh a tempus ultricies, mauris enim volutpat libero, sit amet pharetra sem nisl vel nunc. Sed vitae ultrices ante, eget consequat nulla.
           <br></br>
-          <br></br>
-          Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex. 
-          Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
+            <br></br>
+            Nulla at leo a nulla posuere ultrices at vitae ipsum. Vestibulum quam lacus, hendrerit eget odio eu, luctus dignissim ex.
+            Nullam nisi libero, euismod nec nibh ut, lobortis semper erat. Duis.
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

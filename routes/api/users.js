@@ -5,19 +5,19 @@ const axios = require("axios");
 router.route("/users")
   .get(usersController.findAll);
 
-  router.route("/register")
+router.route("/register")
   .post(usersController.register);
 
-  router.route("/login")
+router.route("/login")
   .post(usersController.login);
 
-  router.route("/users/:id")
+router.route("/users/:id")
   .get(usersController.findbyID);
 
-  router.route("/students/:id")
+router.route("/students/:id")
   .get(usersController.findStudents);
 
-  router.route("/password")
+router.route("/password")
   .post(usersController.updatePassword);
 
 module.exports = router;

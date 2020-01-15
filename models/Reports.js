@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ReportsSchema = new Schema({
-    subject: {
+  subject: {
     type: String,
     required: true
   },
@@ -15,15 +15,15 @@ const ReportsSchema = new Schema({
     type: String,
     required: true
   },
-  teacherId: { 
-    type: Schema.Types.ObjectId, 
+  teacherId: {
+    type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  studentId: { 
-    type: Schema.Types.ObjectId, 
+  studentId: {
+    type: Schema.Types.ObjectId,
     ref: 'users'
   },
-  created:{
+  created: {
     type: String,
   },
   createdAt: {

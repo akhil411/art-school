@@ -6,12 +6,11 @@ class ManageContent extends Component {
   render() {
     return (
       <div>
-        <ManageWebsite history= {this.props.history} />
+        <ManageWebsite history={this.props.history} />
         <Footer />
       </div>
     );
   };
 };
-
 
 export default ManageContent;

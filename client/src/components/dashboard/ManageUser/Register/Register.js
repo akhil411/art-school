@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../../../actions/authActions";
@@ -7,7 +7,6 @@ import classnames from "classnames";
 import API from './../../../../utils/API';
 import TextField from '@material-ui/core/TextField';
 import './style.css';
-import Snackbar from '@material-ui/core/Snackbar';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
 class Register extends Component {

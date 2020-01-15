@@ -15,7 +15,6 @@ module.exports = function validateReportsInput(data) {
     errors.subject = "Subject field is required";
   }
 
-
   if (Validator.isEmpty(data.marks)) {
     errors.marks = "Marks field is required";
   }

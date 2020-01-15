@@ -3,7 +3,7 @@ const reportsController = require("../../controllers/reportsController");
 const axios = require("axios");
 
 router.route("/reports")
-.post(reportsController.create);
+  .post(reportsController.create);
 router.route("/reports/:id")
   .get(reportsController.getReports)
   .delete(reportsController.remove)
