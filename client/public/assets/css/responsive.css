@@ -118,7 +118,13 @@
     .MuiAutocomplete-inputRoot {
         width: 270px !important;
     }
-
+    .login-box form {
+        flex-direction: column !important;
+        height: 140px !important;
+    }
+    .login-section {
+        height: 160px !important;
+    }
 }
 
 @media screen and (max-width: 767px) and (min-width: 480px) {

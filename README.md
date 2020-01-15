@@ -36,7 +36,7 @@
 <li>bcrypt
 
 <h3>Key Skills Demonstrated in this Project</h3>
-<li>Set Authentication using Redux, JSON Web Token and Passport
+<li>Set Authorization using Redux, JSON Web Token and Passport
 <li>Amazon S3 Web Service for image upload
 <li>Demonstrated the use of React Context in Information Component
 <li>Material-UI used throughout the website

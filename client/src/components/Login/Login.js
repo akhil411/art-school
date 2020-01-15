@@ -95,11 +95,6 @@ class Login extends Component {
             </div>
             <div className="login-button-section">
             <button
-                style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                }}
                 type="submit"
                 className="login-button modal-call-button"
             >

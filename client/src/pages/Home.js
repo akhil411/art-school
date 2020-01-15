@@ -1,17 +1,30 @@
 import React, { Component } from "react";
 import Login from "./../components/Login/Login";
-import HeroImage from "./../components/HeroImage/HeroImage";
+import HeroImage from "./../components/Hero/HeroImage";
+import HeroVideo from "./../components/Hero/HeroVideo";
 
 class Home extends Component {
     state = {
+        width:''
       };
+
+  componentDidMount () {
+      this.setState({width:window.screen.width})
+  }    
 
   render() {
     return (
         <div className="homepage-content home-section">
-            <div>
-                <HeroImage />
-            </div>
+            {this.state.width < 768 ? (
+                <div>
+                    <HeroImage />
+                </div>
+            ):(
+                <div>
+                    <HeroVideo />
+                </div>
+            )}
+
             <div className="login-section">
                 <Login history= {this.props.history} />
             </div>

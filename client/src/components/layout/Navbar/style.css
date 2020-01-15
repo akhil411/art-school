@@ -80,12 +80,15 @@
       opacity:1;
     }
   }
+
+
   .hamburger-content {
     width: 100%;
     height: 100%;
     background-color:rgb(37, 24, 24);
     margin:auto;
     filter: opacity(0.9);
+    overflow: auto;
   }
 
   .grid-contents {

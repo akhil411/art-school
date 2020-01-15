@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function HeroImage() {
+function HeroVideo() {
   return (
     <div className="hero-image" poster="../assets/images/home-poster.png">
       <video autoPlay muted loop className="homeVideo">
@@ -11,4 +11,4 @@ function HeroImage() {
   );
 }
 
-export default HeroImage;
+export default HeroVideo;
