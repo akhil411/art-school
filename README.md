@@ -16,6 +16,13 @@
 
 <a href="https://art-school.herokuapp.com/" target="_blank">Art School App</a>
 
+Logins for each users:
+
+Admin - email: admin2@artschool.com password: admin123
+
+Teacher - email: teacher@artschool.com password: teacher123
+
+Student - email: student@artschool.com password : student123
 <h3>Technologies/Services Used</h3>
 <li>React.js
 <li>Node.js
