@@ -4,7 +4,7 @@ const axios = require("axios");
 
 router.route("/posts")
   .post(postsController.create);
-router.route("/posts")
+router.route("/posts/:id")
   .get(postsController.findAll);
 router.route("/like")
   .post(postsController.setLike);

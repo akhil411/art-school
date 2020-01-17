@@ -28,8 +28,8 @@ export default {
     createPosts: function (postdata) {
         return axios.post("/api/posts/posts", postdata);
     },
-    getPosts: function () {
-        return axios.get("/api/posts/posts");
+    getPosts: function (skip) {
+        return axios.get("/api/posts/posts/" + skip);
     },
     fileUpload: function (uploadsData) {
         return axios.post("/api/uploads/uploads", uploadsData)

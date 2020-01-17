@@ -22,20 +22,24 @@ class Posts extends Component {
 			commentPostId: '',
 			postState: '',
 			showcomment: [],
-			items: Array.from({ length: 1 }),
-			posts: []
+			posts: [],
+			skip: 0,
+			morePosts: true
 		}
 	}
 
 	componentDidMount() {
-		this.loadPosts();
+		this.loadPosts(this.state.skip);
 	}
 
-	loadPosts = () => {
-		API.getPosts()
+	loadPosts = (skip) => {
+		API.getPosts(skip)
 			.then(res => {
-				this.setState({ posts: res.data });
-				console.log(this.state.posts)
+				if (res.data.length !== 0) {
+					this.setState({ ...this.state, posts: [...this.state.posts, ...res.data] })
+				} else {
+					this.setState({ morePosts: false })
+				}
 			})
 			.catch(err => console.log(err));
 	};
@@ -74,15 +78,14 @@ class Posts extends Component {
 	}
 
 	fetchMoreData = () => {
-		setTimeout(() => {
-			this.setState({
-				items: this.state.items.concat(Array.from({ length: 1 }))
-			});
-		}, 1500);
-	};
+		this.setState({ skip: this.state.skip + 4 }, () => {
+			setTimeout(() => {
+				this.loadPosts(this.state.skip)
+			}, 1500);
+		})
+	}
 
 	render() {
-
 		return (
 			<div>
 				<div className="modal fade" id="likeModalCenter" role="dialog" aria-labelledby="likeModalCenterTitle" aria-hidden="true">
@@ -118,11 +121,12 @@ class Posts extends Component {
 					</div>
 				</div>
 				<InfiniteScroll
-					dataLength={this.state.items.length} //This is important field to render the next data
+					dataLength={this.state.posts.length} //This is important field to render the next data
 					next={this.fetchMoreData}
-					hasMore={false}
+					hasMore={this.state.morePosts}
 					loader={<h4><CircularProgress />
-						<CircularProgress color="secondary" /></h4>}
+						<CircularProgress color="secondary" />
+					</h4>}
 					endMessage={
 						<p style={{ textAlign: 'center' }}>
 							<b>Yay! You have seen it all</b>

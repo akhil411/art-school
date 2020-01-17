@@ -36,7 +36,8 @@ module.exports = {
       .populate('user')
       .populate('upload')
       .populate('likes.like')
-      .sort({ createdAt: 'desc' })
+      .sort()
+      .skip(Number(req.params.id)).limit(4)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

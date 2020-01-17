@@ -7,7 +7,7 @@ class News extends Component {
     return (
       <div className="weather-content">
         <NewsWeatherContext.Consumer>
-          {value => (value.weather ? (
+          {value => (value.weather.length ? (
             <strong>
               <h1>Sydney</h1>
               {value.weather.temp_c} &#8451;
