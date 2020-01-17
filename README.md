@@ -47,8 +47,11 @@ Student - email: student@artschool.com password : student123
 <li>Amazon S3 Web Service for image upload
 <li>Demonstrated the use of React Context in Information Component
 <li>Material-UI used throughout the website
+<li>Set up infinite scroll for the posts to increase the page loading speed.
 
 <h3>To Do/ Further Development</h3>
+<li>Set announcements notifications
+<li>Develop chat application
 <li>Sending mail to the user after submitting Online Enquiry
 <li>Other Inner Pages Development
 <li>Further Styling of the Website
