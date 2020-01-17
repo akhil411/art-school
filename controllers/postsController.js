@@ -1,7 +1,7 @@
 const db = require("../models");
 const axios = require("axios");
 const validatePostInput = require("../validation/posts");
-const moment = require("moment");
+const moment = require("moment-timezone");
 
 // Defining methods for the booksController
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
       return res.status(400).json(errors);
     }
     var now = moment();
-    var creatednow = now.format("MMMM Do YYYY, h:mm a");
+    var creatednow = now.tz('Australia/Sydney').format('MMMM Do YYYY, h:mm a');
     if (req.body.name) {
       db.Uploads
         .create({ name: req.body.name, url: req.body.url })
@@ -36,7 +36,7 @@ module.exports = {
       .populate('user')
       .populate('upload')
       .populate('likes.like')
-      .sort()
+      .sort({ createdAt: 'desc' })
       .skip(Number(req.params.id)).limit(4)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

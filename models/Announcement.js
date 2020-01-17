@@ -10,6 +10,9 @@ const AnnouncementSchema = new Schema({
   user: {
     type: String,
   },
+  created:{
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now

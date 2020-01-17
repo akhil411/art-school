@@ -118,7 +118,7 @@ class Enquiry extends Component {
                             <ExpansionPanelDetails>
                                 <Typography>
                                     <p><strong>Created By:</strong> {data.user}</p>
-                                    <p><strong>Created On: </strong>{data.createdAt}</p>
+                                    <p><strong>Created On: </strong>{data.created}</p>
                                     <button className="modal-call-button delete-announcement"
                                         data-toggle="modal"
                                         data-target="#deleteModalCenter"
