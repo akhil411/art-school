@@ -2,9 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const passport = require("passport");
+const http = require('http');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require("./config/keys").mongoURI;
+const socketio = require('socket.io');
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -30,4 +32,16 @@ mongoose
 // Start the API server
 app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
+
+
+const server = http.createServer(app);
+const io = socketio(server);
+
+io.on('connection', (socket) => {
+  console.log('we have a new connection')
+
+  socket.on('disconnect', () => {
+    console.log('user had left')
+  })
 });

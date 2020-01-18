@@ -9,7 +9,7 @@
 }
 
 .right-section {
-    max-width: 600px;
+    max-width: 600px !important;
 }
 .icon .avatar-icon {
     background-color: #f65058ff;
@@ -63,6 +63,13 @@
     width: 100%;
     padding-top: 100px;
     min-height:100vh;
+    position: relative;
+}
+
+.chat-section {
+    position: fixed;
+    top: 150px;
+    right: 0;
 }
 
 .left-section {
