@@ -30,6 +30,7 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^4.4.1",
     "concurrently": "^4.0.1",
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
@@ -44,6 +45,7 @@
     "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
     "popper.js": "^1.16.0",
+    "socket.io": "^2.3.0",
     "url": "^0.11.0",
     "validator": "^10.9.0"
   }
