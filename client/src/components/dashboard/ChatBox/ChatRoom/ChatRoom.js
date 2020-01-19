@@ -4,7 +4,7 @@ import TextContainer from './TextContainer/TextContainer';
 import Messages from './Messages/Messages';
 import InfoBar from './InfoBar/InfoBar';
 import Input from './Input/Input';
-const ENDPOINT = 'localhost:3001';
+const ENDPOINT = process.env.PORT || 'localhost:3001';
 
 let socket;
 
@@ -14,7 +14,6 @@ const ChatRoom = (props) => {
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = process.env.PORT || 'localhost:3001';
 
   useEffect(() => {
     const name  = props.name;
