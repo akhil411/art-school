@@ -4,6 +4,10 @@
     margin: 0 !important;
 }
 
+.dashboard-container .row {
+    margin: 0 !important;
+}
+
 .col-md-9 {
     margin:auto;
 }

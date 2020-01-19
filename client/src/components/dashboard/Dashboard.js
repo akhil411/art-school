@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import Posts from "./Posts/Posts";
 import Avatar from '@material-ui/core/Avatar';
-import Chat from './Chat/Chat';
+import ChatBox from './ChatBox/ChatBox';
+import ChatRoom from './ChatBox/ChatRoom/ChatRoom'
 
 class Dashboard extends Component {
 
@@ -18,7 +19,11 @@ class Dashboard extends Component {
             selectedFile: "",
             errors: {},
             submitSuccess: false,
+            enterChatRoom:false,
+            chatRoom:'',
         };
+        this.chatInClick = this.chatInClick.bind(this);
+        this.chatOutClick = this.chatOutClick.bind(this);
     }
 
     onLogoutClick = e => {
@@ -26,9 +31,25 @@ class Dashboard extends Component {
         this.props.logoutUser();
     };
 
+    chatInClick(room) {
+        this.setState({chatRoom: room}, () => {
+            this.setState({enterChatRoom:true})
+        });
+    }
+
+    chatOutClick() {
+        this.setState({enterChatRoom: false});
+    }
+
     render() {
         const { user } = this.props.auth;
         const role = user.role;
+        let chat;
+        if (this.state.enterChatRoom) {
+            chat = <ChatRoom onClick={this.chatOutClick} name={user.name} room={this.state.chatRoom}/>;
+          } else {
+            chat = <ChatBox onClick={this.chatInClick} />;
+        }
 
         return (
             <div className="dashboard-container">
@@ -93,7 +114,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div className="chat-section">
-                    <Chat name={user.name}/>
+                    {chat}
                 </div>
             </div>
         );
