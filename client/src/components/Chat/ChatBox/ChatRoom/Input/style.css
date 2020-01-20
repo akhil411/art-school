@@ -1,15 +1,13 @@
 .chatform {
     display: flex;
     position: absolute;
-    bottom: 85px;
-    height: 40px;
+    bottom: 45px;
   }
   
   .chatform .input {
     border: none;
     border-radius: 0;
     padding: 5%;
-    width: 80%;
     font-size: 1.2em;
   }
   
@@ -28,10 +26,15 @@
     margin-top: 30px;
     font-size: 16px;
     width: 90px;
+    transition: unset !important;
   }
 
   .chatform .MuiInputLabel-animated {
     padding-left: 20px !important;
   }
 
+  .chatRoomContainer .chatform .MuiInput-formControl {
+    animation: unset !important;
+    transition: unset !important;
+  }
   

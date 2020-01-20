@@ -55,6 +55,9 @@
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
+    .information-content .react-tabs .react-tabs__tab {
+        margin-left: 10px;
+    }
     .website-content .react-tabs__tab-panel {
         width: 280px !important;
     }
@@ -111,6 +114,10 @@
     .grid-container, .manage-website-wrapper, label + .MuiInput-formControl{
         width: 280px !important;
     }
+    .chatRoomContainer .chatform .MuiInput-formControl {
+        width: 170px !important;
+    }
+
     .page-heading {
         margin: unset;
     }

@@ -89,13 +89,14 @@ class Posts extends Component {
 					if (200 === response.status) {
 						// If file size is larger than expected.
 						if (response.data.error) {
-							if ('LIMIT_FILE_SIZE' === response.data.error.code) {
-								// this.ocShowAlert( 'Max size: 2MB', 'red' );
-							} else {
-								console.log(response.data);
-								// If not the given file type
-								// this.ocShowAlert( response.data.error, 'red' );
-							}
+							this.setState({ errors: response.data })
+							// if ('LIMIT_FILE_SIZE' === response.data.error.code) {
+							// 	// this.ocShowAlert( 'Max size: 2MB', 'red' );
+							// } else {
+							// 	console.log(response.data);
+							// 	// If not the given file type
+							// 	// this.ocShowAlert( response.data.error, 'red' );
+							// }
 						} else {
 							// Success
 							let imageDetails = response.data;
@@ -223,6 +224,9 @@ class Posts extends Component {
 								</span>
 								<hr></hr>
 								<input onChange={this.onFileChange} type="file" name="pic" accept="image/*"></input>
+								<span className="red-text">
+									{errors.error}
+								</span>
 								<button className="modal-call-button" type="submit" value="Submit"><span>Submit </span></button>
 							</form>
 						</div>
