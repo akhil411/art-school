@@ -9,18 +9,15 @@ import { Provider } from "react-redux";
 import store from "./store";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import UserDashboard from "./pages/Dashboard";
-import ManageUsers from "./pages/ManageUsers";
-import ManageWebsite from "./pages/ManageWebsite";
 import NoMatch from "./pages/NoMatch";
 import Courses from "./pages/Courses";
 import Enquiry from "./pages/OnlineEnquiry";
-import StudentAccount from "./pages/StudentAccount";
+import Account from './pages/Account';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 import Popper from 'popper.js';
-import StudentReport from './pages/StudentReports'
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,10 +51,7 @@ class App extends Component {
               <Route exact path="/courses" component={Courses} />
               <Route exact path="/online-enquiry" component={Enquiry} />
               <PrivateRoute exact path="/dashboard" component={UserDashboard} />
-              <PrivateRoute path="/dashboard/manage-users" component={ManageUsers} />
-              <PrivateRoute path="/dashboard/manage-website" component={ManageWebsite} />
-              <PrivateRoute path="/dashboard/student-reports" component={StudentReport} />
-              <PrivateRoute path="/dashboard/student-account" component={StudentAccount} />
+              <PrivateRoute exact path="/dashboard/account" component={Account} />
               <Route path="*"><NoMatch /></Route>
             </Switch>
           </div>

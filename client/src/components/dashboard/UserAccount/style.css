@@ -1,3 +1,19 @@
+.manage-users {
+    padding-top: 100px;
+    height: 100%;
+}
+
+.manage-users-header-background {
+    height: 75px;
+    background-color: darkslateblue;
+    margin-top: -100px;
+    margin-bottom: 50px;
+}
+.manage-user-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .website-content {
     padding-top: 100px;
     min-height: calc(100vh - 50px);

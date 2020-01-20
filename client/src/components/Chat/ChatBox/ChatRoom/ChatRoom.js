@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import io from "socket.io-client";
 import TextContainer from './TextContainer/TextContainer';
 import Messages from './Messages/Messages';
@@ -9,18 +9,14 @@ const ENDPOINT = process.env.PORT || 'localhost:3001';
 let socket;
 
 const ChatRoom = (props) => {
-  const [name, setName] = useState('');
-  const [room, setRoom] = useState('');
+  const [name, setName] = useState(props.name);
+  const [room, setRoom] = useState('Art School');
   const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    const name  = props.name;
-    const room = props.room;
     socket = io(ENDPOINT);
-    setName(name);
-    setRoom(room);
 
     socket.emit('join', { name, room }, (error) => {
       if(error) {
