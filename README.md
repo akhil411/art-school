@@ -10,19 +10,13 @@
 <li>Teachers - view & submit student reports
 <li>Students - view report
 
-<p>The main highlight is that every users can post their artwork in the website and others can like and comment on each post.
+<p>The main highlight is that every users can post their artwork in the website and others can like and comment on each post. Also, there is a chat application in which users can chat in a common chatroom.
 
 <h3>Deployed Heroku Link</h3>
 
 <a href="https://art-school.herokuapp.com/" target="_blank">Art School App</a>
 
-Logins for each users:
 
-Admin - email: admin2@artschool.com password: admin123
-
-Teacher - email: teacher@artschool.com password: teacher123
-
-Student - email: student@artschool.com password : student123
 <h3>Technologies/Services Used</h3>
 <li>React.js
 <li>Node.js
@@ -35,6 +29,7 @@ Student - email: student@artschool.com password : student123
 <li>Redux
 <li>Material-UI
 <li>React-Tabs
+<li>Socket.io
 <li>React-Infinite-Scroll
 <li>JSON Web Token
 <li>Passport
@@ -46,12 +41,12 @@ Student - email: student@artschool.com password : student123
 <li>Set Authorization using Redux, JSON Web Token and Passport
 <li>Amazon S3 Web Service for image upload
 <li>Demonstrated the use of React Context in Information Component
+<li>Chat Application using Socket.io
 <li>Material-UI used throughout the website
 <li>Set up infinite scroll for the posts to increase the page loading speed.
 
 <h3>To Do/ Further Development</h3>
 <li>Set announcements notifications
-<li>Develop chat application
 <li>Sending mail to the user after submitting Online Enquiry
 <li>Other Inner Pages Development
 <li>Further Styling of the Website
