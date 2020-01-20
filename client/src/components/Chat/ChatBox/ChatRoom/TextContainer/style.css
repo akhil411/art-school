@@ -1,10 +1,16 @@
 .textContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 100px;
     color: white;
-    height: 60%;
     justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+    width: 296px;
+    border-top: 2px solid rgb(40, 51, 74);
+  }
+
+  .textContainer .MuiPaper-root{
+    margin-top: 0 !important;
   }
   
   .activeContainer {
@@ -26,7 +32,13 @@
     margin-bottom: 0px;
   }
   
-  @media (min-width: 320px) and (max-width: 1200px) {
+
+  .textContainer .MuiExpansionPanelSummary-root {
+    background-color: greenyellow;
+    height: 28px !important;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
     .textContainer {
       display: none;
     }

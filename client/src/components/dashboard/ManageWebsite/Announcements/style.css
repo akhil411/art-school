@@ -21,6 +21,7 @@
 
 .announcements-section .view-announcements {
     margin-top: 50px;
+    min-height: 383px;
 }
 
 .announcements-section .view-announcements h3 {
@@ -33,4 +34,12 @@
 
 .MuiSnackbarContent-root {
     background-color: green !important;
+}
+
+.announcements-pagination {
+    margin-top: 50px;
+}
+
+.deleteModalHide {
+    display: none !important;
 }

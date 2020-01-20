@@ -1,20 +1,4 @@
-.row-main {
-    text-align: center;
-    justify-content: center;
-    margin: 0 !important;
-}
 
-.dashboard-container .row {
-    margin: 0 !important;
-}
-
-.col-md-9 {
-    margin:auto;
-}
-
-.right-section {
-    max-width: 600px !important;
-}
 .icon .avatar-icon {
     background-color: #f65058ff;
     border-radius: 50px;
@@ -67,19 +51,9 @@
     width: 100%;
     padding-top: 100px;
     min-height:100vh;
-    position: relative;
 }
 
-.chat-section {
-    position: fixed;
-    top: 150px;
-    right: 0;
-}
 
-.left-section {
-    position: fixed;
-    margin-top: 50px;
-}
 
 .blog-submit .modal-call-button {
     background-color: white;
@@ -93,4 +67,23 @@
 
 .MuiCardContent-root {
     text-align: left;
+}
+
+
+.dashboard-container .dashboard-innerContainer {
+    width: 960px;
+    margin: auto;
+    display: grid;
+}
+
+.dashboard-container .left-section {
+    position: fixed;
+    margin-top: 50px;
+    grid-area: 1/1/1/1;
+    text-align: center;
+}
+
+.dashboard-container .right-section {
+    max-width: 600px;
+    grid-area: 1/2/1/2;
 }

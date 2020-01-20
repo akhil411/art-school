@@ -1,3 +1,7 @@
 .enquiry-details .enquiry-content {
-    min-height: 750px;
+    min-height: 550px;
+}
+
+.enquiry-details h3 {
+    color: black;
 }

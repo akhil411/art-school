@@ -1,3 +1,19 @@
+.manage-users {
+    padding-top: 100px;
+    height: 100%;
+}
+
+.manage-users-header-background {
+    height: 75px;
+    background-color: darkslateblue;
+    margin-top: -100px;
+    margin-bottom: 50px;
+}
+.manage-user-wrapper {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .website-content {
     padding-top: 100px;
     min-height: calc(100vh - 50px);
@@ -17,7 +33,11 @@
 }
 
 .website-content .react-tabs__tab-list li {
-    width: 400px;
+    width: 260px;
+}
+
+.website-content .react-tabs__tab-panel {
+    width: 500px;
 }
 
 .manage-website-wrapper {
@@ -33,4 +53,6 @@
     border-color:white;
     font-size: 25px;
     font-weight: bold;
+    color: darkblue !important;
+    font-size: 20px
 }

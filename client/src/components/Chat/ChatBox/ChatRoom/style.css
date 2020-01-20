@@ -1,11 +1,27 @@
+.chatRoomContainer {
+    width: 300px;
+    height: 78vh;
+    position: relative;
+    background-color: aliceblue;
+    border: 2px solid rgb(40, 51, 74);
+}
+
+.chatScroll {
+    overflow: auto;
+    height: 65vh;
+    padding-top: 60px;
+}
+
 .infoBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #2979FF;
-    border-radius: 4px 4px 0 0;
+    background: rgb(40, 51, 74);
     height: 60px;
-    width: 100%;
+    width: 296px;
+    position: absolute;
+    top: 0px;
+    z-index: 99;
   }
   
   .leftInnerContainer {
@@ -25,4 +41,8 @@
   
   .onlineIcon {
     margin-right: 5%;
+  }
+
+  .rightInnerContainer {
+    cursor: pointer;
   }
