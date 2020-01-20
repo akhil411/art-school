@@ -19,10 +19,8 @@ class Chat extends Component {
         this.chatOutClick = this.chatOutClick.bind(this);
     }
 
-    chatInClick(room) {
-        this.setState({chatRoom: room}, () => {
-            this.setState({enterChatRoom:true})
-        });
+    chatInClick() {
+        this.setState({enterChatRoom:true});
     }
 
     chatOutClick() {

@@ -1,0 +1,48 @@
+.chatRoomContainer {
+    width: 300px;
+    height: 78vh;
+    position: relative;
+    background-color: aliceblue;
+}
+
+.chatScroll {
+    overflow: auto;
+    height: 65vh;
+    padding-top: 60px;
+}
+
+.infoBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(40, 51, 74);
+    border-radius: 4px 4px 0 0;
+    height: 60px;
+    width: 300px;
+    position: absolute;
+    top: 0px;
+    z-index: 99;
+  }
+  
+  .leftInnerContainer {
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    color: white;
+  }
+  
+  .rightInnerContainer {
+    display: flex;
+    flex: 0.5;
+    justify-content: flex-end;
+    margin-right: 5%;
+  }
+  
+  .onlineIcon {
+    margin-right: 5%;
+  }
+
+  .rightInnerContainer {
+    cursor: pointer;
+  }

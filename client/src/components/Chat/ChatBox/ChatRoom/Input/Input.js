@@ -1,19 +1,19 @@
 import React from 'react';
-
 import './style.css';
+import TextField from '@material-ui/core/TextField';
 
 const Input = ({ setMessage, sendMessage, message }) => (
-  <form className="chatform">
-    <input
-      className="input"
-      type="text"
-      placeholder="Type a message..."
-      value={message}
-      onChange={({ target: { value } }) => setMessage(value)}
-      onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
-    />
-    <button className="sendButton" onClick={e => sendMessage(e)}>Send</button>
-  </form>
+	<form className="chatform">
+		<TextField
+			className="input"
+			type="text"
+			label="Type a message..."
+			value={message}
+			onChange={({ target: { value } }) => setMessage(value)}
+			onKeyPress={event => event.key === 'Enter' ? sendMessage(event) : null}
+		/>
+		<button className="sendButton" onClick={e => sendMessage(e)}>Send</button>
+	</form>
 )
 
 export default Input;

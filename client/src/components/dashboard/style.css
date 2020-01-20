@@ -69,12 +69,6 @@
     min-height:100vh;
 }
 
-.chat-section {
-    position: fixed;
-    top: 150px;
-    right: 0;
-}
-
 .left-section {
     position: fixed;
     margin-top: 50px;
