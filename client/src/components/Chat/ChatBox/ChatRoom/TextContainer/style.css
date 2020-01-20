@@ -5,7 +5,12 @@
     justify-content: space-between;
     position: absolute;
     bottom: 0px;
-    width: 300px;
+    width: 296px;
+    border-top: 2px solid rgb(40, 51, 74);
+  }
+
+  .textContainer .MuiPaper-root{
+    margin-top: 0 !important;
   }
   
   .activeContainer {

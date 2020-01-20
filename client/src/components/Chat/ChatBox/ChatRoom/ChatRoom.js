@@ -53,7 +53,7 @@ const ChatRoom = (props) => {
 
 	const disconnect = () => {
 			socket.close();
-} 
+	} 
 
 	return (
 		<div className="chatRoomContainer">

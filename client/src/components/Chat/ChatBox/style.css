@@ -1,16 +1,10 @@
-.chat-section {
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-}
-
 .chatBoxContainer img {
     width: 35px;
     margin-left: 10px;
 }
 
 .chatBoxContainer button {
-    border-radius: 4px;
+    border-radius: 50px;
     background-color: gold;
     border: 2px solid rgb(40, 51, 74);
     color: darkred;
@@ -20,6 +14,7 @@
     width: 200px;
     cursor: pointer;
     transition: all 0.5s;
+    outline: none;
 }
 
 .chatBoxContainer button img {

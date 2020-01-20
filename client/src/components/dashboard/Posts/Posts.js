@@ -238,7 +238,7 @@ class Posts extends Component {
 					dataLength={this.state.posts.length}
 					next={this.fetchMoreData}
 					hasMore={this.state.morePosts}
-					loader={<h4 style={{ marginTop: '10px' }}><CircularProgress />
+					loader={<h4 style={{ textAlign: 'center', marginTop: '10px' }}><CircularProgress />
 					</h4>}
 					endMessage={
 						<p style={{ textAlign: 'center', marginTop: '10px' }}>

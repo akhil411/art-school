@@ -1,24 +1,38 @@
-@media screen and (min-width: 1084px) {
+@media screen and (min-width: 1270px) {
     .right-section {
       min-width:600px;
     }
   }
 
+  @media screen and (max-width: 1269px) and (min-width: 1084px) {
+    .dashboard-container .dashboard-innerContainer {
+        width: 820px;
+    }
+    .dashboard-container .right-section {
+        max-width: 420px !important;
+    }
+    .MuiPaper-root .media {
+        width: 390px;
+    }
+  }
 
 @media screen and (max-width: 1083px) and (min-width: 768px) {
-    .dashboard-container .col-md-9 {
-        flex: 0 0 95% !important;
-        max-width: 100% !important;
-    }
-    .dashboard-container .col-md-6 {
-        flex: 0 0 75% !important;
-        max-width: 75% !important;
-    }
-    .right-section {
-        min-width:535px;
-      }
     .MuiPaper-root .media {
-        width: 480px;
+        width: 390px;
+    }
+    .dashboard-container .dashboard-innerContainer {
+        width: 700px !important;
+        margin: auto !important;
+        display: unset !important;
+    }
+    .dashboard-container .left-section {
+        width: 250px !important;
+        margin: auto !important;
+        position: unset !important;
+    }
+    .dashboard-container .right-section {
+        max-width: 420px !important;
+        margin: auto !important;
     }
     .grid-contents {
         width: 740px;
@@ -41,6 +55,15 @@
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
+    .website-content .react-tabs__tab-panel {
+        width: 280px !important;
+    }
+    .pagination a {
+        padding: 8px 5px !important;  
+    }
+    .displayUsersTable table {
+        width: 275px !important;
+    }
     .dashboard-container .left-section {
         position: unset;
     }
@@ -100,9 +123,6 @@
     .website-content .react-tabs {
         display: unset !important;
     }
-    .website-content .react-tabs__tab-list {
-        flex-direction: row !important;
-    }
     .website-content .react-tabs__tab-list li {
         width: 160px !important;
     }
@@ -125,6 +145,9 @@
     .login-section {
         height: 160px !important;
     }
+    .announcements-section .MuiExpansionPanel-rounded, .enquiry-content .MuiExpansionPanel-rounded{
+        width: 250px !important;
+    }
 }
 
 @media screen and (max-width: 767px) and (min-width: 480px) {
@@ -135,9 +158,37 @@
         min-height: 200px;
         width: 185px;
     }
+    .dashboard-container .dashboard-innerContainer {
+        width: 420px !important;
+        margin: auto !important;
+        display: unset !important;
+    }
+    .dashboard-container .left-section {
+        width: 250px !important;
+        margin: auto !important;
+        position: unset !important;
+    }
+    .dashboard-container .right-section {
+        max-width: 420px !important;
+        margin: auto !important;
+    }
 }
 
 @media screen and (max-width: 479px) and (min-width: 320px) {
+    .dashboard-container .dashboard-innerContainer {
+        width: 280px !important;
+        margin: auto !important;
+        display: unset !important;
+    }
+    .dashboard-container .left-section {
+        width: 250px !important;
+        margin: auto !important;
+        position: unset !important;
+    }
+    .dashboard-container .right-section {
+        max-width: 280px !important;
+        margin: auto !important;
+    }
       .MuiPaper-root .media {
         width: 250px;
         height: 300px;

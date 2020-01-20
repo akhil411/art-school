@@ -19,7 +19,7 @@ const TextContainer = ({ users }) => (
 								aria-controls="panel1a-content"
 								id="panel1a-header"
 							>
-								<Typography ><h6>Online:</h6></Typography>
+								<Typography ><h6>Chatroom Online Users:</h6></Typography>
 							</ExpansionPanelSummary>
 							<ExpansionPanelDetails>
 								<Typography>

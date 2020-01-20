@@ -14,7 +14,7 @@ class Enquiry extends Component {
         super(props);
         this.state = {
             enquiry: [],
-            pageOfItems: []
+            pageOfItems: [],
         }
         this.onChangePage = this.onChangePage.bind(this);
     }
@@ -32,6 +32,7 @@ class Enquiry extends Component {
                 console.log(err)
             });
     }
+    
     onChangePage(pageOfItems) {
         this.setState({ pageOfItems: pageOfItems });
     }
@@ -40,8 +41,9 @@ class Enquiry extends Component {
 
         return (
             <div className="enquiry-details">
+                <h3>Enquiries:</h3>
                 <div className="enquiry-content">
-                    {this.state.pageOfItems.map(data => (
+                    {this.state.pageOfItems.map(data => ( 
                         <ExpansionPanel>
                             <ExpansionPanelSummary
                                 expandIcon={<ExpandMoreIcon />}

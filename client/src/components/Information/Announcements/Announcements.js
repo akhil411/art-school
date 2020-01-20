@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import './style.css'
 import API from './../../../utils/API';
+import Pagination from './../../Layout/Pagination/Pagination';
 
 class ModalAnnouncements extends Component {
     constructor() {
         super();
         this.state = {
             announcements: [],
+            pageOfItems: [],
         }
+        this.onChangePage = this.onChangePage.bind(this);
     }
 
     componentDidMount = () => {
@@ -24,13 +27,22 @@ class ModalAnnouncements extends Component {
             });
     }
 
+    onChangePage(pageOfItems) {
+        this.setState({ pageOfItems: pageOfItems });
+    }
+
     render() {
 
         return (
             <div className="modal-announcements">
-                {this.state.announcements.map(data => (
-                    <h5>{data.announcement}</h5>
-                ))}
+                <div className="modalAnnouncements-content">
+                    {this.state.pageOfItems.map(data => (
+                        <h5>{data.announcement}</h5>
+                    ))}
+                </div>
+                <div className="modalAnnouncements-pagination">
+                    <Pagination items={this.state.announcements} onChangePage={this.onChangePage} />
+                </div>
                 <div className="more-info">
                     <span>For More Info </span><span><a href="tel:0469187261"><button className="modal-call-button"><span>Call </span></button></a></span>
                 </div>

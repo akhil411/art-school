@@ -1,0 +1,10 @@
+.displayUsersTable table {
+    color: black;
+    margin-top: 20px;
+    width: 600px;
+    line-height: 45px;
+}
+
+.displayUsersTable {
+    min-height: 500px;
+}

@@ -93,9 +93,6 @@ class UserAccount extends Component {
                                                 <IndividualReport userId={this.props.auth.user.id} />
                                             </TabPanel>
                                             <TabPanel>
-                                                <ViewReport />
-                                            </TabPanel>
-                                            <TabPanel>
                                                 <UpdatePassword userId={this.props.auth.user.id} />
                                             </TabPanel>
                                         </Tabs>

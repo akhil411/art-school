@@ -9,6 +9,7 @@ import classnames from "classnames";
 import TextField from '@material-ui/core/TextField';
 import './style.css';
 import Snackbar from '@material-ui/core/Snackbar';
+import Pagination from './../../../Layout/Pagination/Pagination';
 
 class Enquiry extends Component {
 
@@ -19,8 +20,11 @@ class Enquiry extends Component {
             announcements: [],
             errors: {},
             deleteId: '',
-            submitSuccess: false
+            submitSuccess: false,
+            deleteSuccess: false,
+            pageOfItems: [],
         }
+        this.onChangePage = this.onChangePage.bind(this);
     }
 
     componentDidMount() {
@@ -61,7 +65,9 @@ class Enquiry extends Component {
     deleteAnnouncement = () => {
         API.deleteAnnouncement(this.state.deleteId)
             .then(res =>
-                window.location.reload()
+                this.setState({ deleteSuccess: true }, () => {
+                    window.location.reload();
+                })
             )
             .catch(err => console.log(err));
     }
@@ -72,8 +78,12 @@ class Enquiry extends Component {
             return;
         }
 
-        this.setState({ submitSuccess: false })
+        this.setState({ submitSuccess: false, deleteSuccess: false })
     };
+
+    onChangePage(pageOfItems) {
+        this.setState({ pageOfItems: pageOfItems });
+    }
 
     render() {
 
@@ -105,7 +115,7 @@ class Enquiry extends Component {
                 </div>
                 <div className="view-announcements">
                     <h3>Announcements List:</h3>
-                    {this.state.announcements.map((data, index) => (
+                    {this.state.pageOfItems.map((data, index) => (
                         <ExpansionPanel>
                             <ExpansionPanelSummary
                                 expandIcon={<ExpandMoreIcon />}
@@ -113,7 +123,7 @@ class Enquiry extends Component {
                                 id="panel1a-header"
                                 key={index}
                             >
-                                <Typography className="enquiry-heading"><strong>{index + 1}. </strong>{data.announcement}</Typography>
+                                <Typography className="enquiry-heading">{data.announcement}</Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Typography>
@@ -130,6 +140,9 @@ class Enquiry extends Component {
                             </ExpansionPanelDetails>
                         </ExpansionPanel>
                     ))}
+                </div>
+                <div className="announcements-pagination">
+                    <Pagination items={this.state.announcements} onChangePage={this.onChangePage} />
                 </div>
                 <div className="modal fade" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="likeModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
@@ -150,7 +163,13 @@ class Enquiry extends Component {
                     open={this.state.submitSuccess}
                     autoHideDuration={3000}
                     onClose={this.handleClose}
-                    message="&#10004; Announcement Successfully Submitted"
+                    message="&#10004; Announcement Submitted Successfully"
+                />
+                <Snackbar
+                    open={this.state.deleteSuccess}
+                    autoHideDuration={3000}
+                    onClose={this.handleClose}
+                    message="&#10004; Announcement Deleted Successfully"
                 />
             </div>
         );

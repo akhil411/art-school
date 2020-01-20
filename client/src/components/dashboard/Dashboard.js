@@ -31,31 +31,24 @@ class Dashboard extends Component {
 
         return (
             <div className="dashboard-container">
-                <div className="row row-main">
-                    <div className="col-md-12">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <div className="left-section">
-                                    <div className="icon">
-                                        <Avatar className="avatar-icon">{user.name.charAt(0).toUpperCase()}{user.name.charAt(1).toUpperCase()}</Avatar>
-                                    </div>
-                                    <div className="user-name">
-                                        <h4>Hi, {user.name.split(" ")[0]}</h4>
-                                    </div>
-                                    <div>
-                                        <Link to="/dashboard/account">
-                                            <h5>Account</h5>
-                                        </Link>
-                                    </div>
-                                    <button className="modal-call-button" type="submit" value="Submit" onClick={this.onLogoutClick}><span>Logout </span></button>
-                                </div>
-                            </div>
-                            <div className="col-md-6 right-section">
-                                <div>
-                                    <Posts userId={user.id} />
-                                </div>
-                            </div>
-                            <div className="col-md-3"></div>
+                <div className="dashboard-innerContainer">
+                    <div className="left-section">
+                        <div className="icon">
+                            <Avatar className="avatar-icon">{user.name.charAt(0).toUpperCase()}{user.name.charAt(1).toUpperCase()}</Avatar>
+                        </div>
+                        <div className="user-name">
+                            <h4>Hi, {user.name.split(" ")[0]}</h4>
+                        </div>
+                        <div>
+                            <Link to="/dashboard/account">
+                                <h5>Account</h5>
+                            </Link>
+                        </div>
+                        <button className="modal-call-button" type="submit" value="Submit" onClick={this.onLogoutClick}><span>Logout </span></button>
+                    </div>
+                    <div className="right-section">
+                        <div>
+                            <Posts userId={user.id} />
                         </div>
                     </div>
                 </div>

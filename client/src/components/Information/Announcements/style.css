@@ -10,4 +10,17 @@
 
 .more-info {
     padding-top: 70px;
+    margin-bottom: 50px;
+}
+
+.modalAnnouncements-pagination .pagination a {
+    color: white !important;
+}
+
+.modalAnnouncements-content {
+    min-height: 300px;
+}
+
+.modalAnnouncements-pagination ul li {
+    padding: 0 !important;
 }

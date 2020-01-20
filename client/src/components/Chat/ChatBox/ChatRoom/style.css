@@ -3,6 +3,7 @@
     height: 78vh;
     position: relative;
     background-color: aliceblue;
+    border: 2px solid rgb(40, 51, 74);
 }
 
 .chatScroll {
@@ -16,9 +17,8 @@
     align-items: center;
     justify-content: space-between;
     background: rgb(40, 51, 74);
-    border-radius: 4px 4px 0 0;
     height: 60px;
-    width: 300px;
+    width: 296px;
     position: absolute;
     top: 0px;
     z-index: 99;
