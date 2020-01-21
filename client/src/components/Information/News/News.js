@@ -8,7 +8,7 @@ class News extends Component {
       <NewsWeatherContext.Consumer>
         {value => (value.news.length ? (
           <ul className="news-content">
-            {value.news.map(news => (
+            {value.news.slice( 0, 6 ).map(news => (
               <li><a href={news.url} target="_blank">{news.title}</a></li>
             ))}
           </ul>

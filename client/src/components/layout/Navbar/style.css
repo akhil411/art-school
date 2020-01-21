@@ -15,6 +15,11 @@
   text-align: center;
 }
 
+.header-contents .header-link {
+  width: 280px;
+  margin: auto;
+}
+
 .header-contents .header-text {
   font-family: 'Pacifico', cursive;
   font-weight: bolder;

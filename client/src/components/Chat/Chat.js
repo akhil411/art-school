@@ -30,10 +30,14 @@ class Chat extends Component {
     render() {
         const { user } = this.props.auth;
         let chat;
-        if (this.state.enterChatRoom) {
-            chat = <ChatRoom onClick={this.chatOutClick} name={user.name} />;
-          } else {
-            chat = <ChatBox onClick={this.chatInClick} />;
+        if (this.props.auth.isAuthenticated) {
+            if (this.state.enterChatRoom) {
+                chat = <ChatRoom onClick={this.chatOutClick} name={user.name} />;
+              } else {
+                chat = <ChatBox onClick={this.chatInClick} />;
+            }
+        } else {
+            chat = <div></div>
         }
 
         return (

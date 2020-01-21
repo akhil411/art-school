@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
+import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Typography from '@material-ui/core/Typography';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import UpdateUser from './../ManageUser/UpdateUser/UpdateUser';
@@ -36,7 +36,7 @@ class UserAccount extends Component {
                 <div className="manage-website-wrapper">
                     <div>
                         <Breadcrumbs aria-label="breadcrumb">
-                            <Link color="inherit" href="/dashboard">
+                            <Link to="/dashboard">
                                 Dashboard
                             </Link>
                             <Typography color="textPrimary">Account</Typography>
@@ -128,7 +128,6 @@ class UserAccount extends Component {
     }
 }
 
-// export default ManageUser;
 UserAccount.propTypes = {
     auth: PropTypes.object.isRequired
 };

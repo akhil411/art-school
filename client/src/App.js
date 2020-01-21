@@ -18,6 +18,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import $ from 'jquery';
 import Popper from 'popper.js';
+import Chat from "./components/Chat/Chat";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -54,6 +55,7 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard/account" component={Account} />
               <Route path="*"><NoMatch /></Route>
             </Switch>
+            <Chat />
           </div>
         </Router>
       </Provider>
@@ -61,3 +63,4 @@ class App extends Component {
   }
 }
 export default App;
+
