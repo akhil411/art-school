@@ -25,16 +25,16 @@ The app will be running on localhost:3000.
 Login with the credentials.
 Please contact for the login credentials.
 
-[Login](/client/public/assets/images/login.png)
+ <img src="client/public/assets/images/login.png"></img>
 
 Post any image or thoughts in the post section or can chat with other users online in the chatroom.
 
-[Dashboard](/client/public/assets/images/dashboard.png)
+<img src="client/public/assets/images/dashboard.png"></img>
 
 navigate to the account section for account management.
 the options changes according to the roles. 
 
-[Account](/client/public/assets/images/account.png)
+<img src="client/public/assets/images/account.png"></img>
 
 <p><strong>What each users can do:</strong>
 
