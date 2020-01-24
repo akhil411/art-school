@@ -3,6 +3,39 @@
 <p> Welcome to Art School, 
 <p>Art School is a website for students, teachers, admins and other staff of an institution. In this website various users have different restricted access. The Website can be modified to suite various other Courses also.
 
+
+<h3>Getting started</h3>
+
+Make sure you install all the dependencies you need for the project including Node.JS and MongoDB. You Once you have these installed enter the following commands into the terminal.
+
+git clone git@github.com:akhil411/art-school.git
+
+npm install 
+
+npm start
+
+The app will be running on localhost:3000.
+
+<h3>Deployed Heroku Link</h3>
+
+<a href="https://art-school.herokuapp.com/" target="_blank">Art School App</a>
+
+<h3>How it Works</h3>
+
+Login with the credentials.
+Please contact for the login credentials.
+
+[Login](/client/public/assets/images/login.png)
+
+Post any image or thoughts in the post section or can chat with other users online in the chatroom.
+
+[Dashboard](/client/public/assets/images/dashboard.png)
+
+navigate to the account section for account management.
+the options changes according to the roles. 
+
+[Account](/client/public/assets/images/account.png)
+
 <p><strong>What each users can do:</strong>
 
 <li>Admin - add & update users, manage website contents, view & submit student reports
@@ -12,9 +45,6 @@
 
 <p>The main highlight is that every users can post their artwork in the website and others can like and comment on each post. Also, there is a chat application in which users can chat in a common chatroom.
 
-<h3>Deployed Heroku Link</h3>
-
-<a href="https://art-school.herokuapp.com/" target="_blank">Art School App</a>
 
 
 <h3>Technologies/Services Used</h3>
