@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import { Link } from 'react-router-dom';
 import API from './../../../utils/API';
 import Information from './../../Information/Information';
 
@@ -60,7 +61,11 @@ class Navbar extends Component {
         return (
             <div className="header" style={this.state.scrolling ? { "backgroundColor": "#fbde44ff" } : { "backgroundColor": "" }}>
                 <div className="header-contents">
-                    <a className="header-text" href="/" style={this.state.scrolling ? { "color": "#28334AFF" } : { "color": "" }}>Art School</a>
+                    <div className="header-link">
+                        <Link to="/">
+                            <div className="header-text" style={this.state.scrolling ? { "color": "#28334AFF" } : { "color": "" }}>Art School</div>
+                        </Link>
+                    </div>
                     <img style={this.state.scrolling ? { "filter": "brightness(0.5)" } : { "filter": "" }} className="announcements-logo" src="../assets/images/announcement.svg"></img>
                     <div className="hamburger-menu">
                         <hr style={this.state.scrolling ? { "borderTop": "3px solid black" } : { "borderTop": "" }}></hr>
@@ -83,9 +88,9 @@ class Navbar extends Component {
                                 <div className="item1">
                                     <a href="/courses"><h4>Courses</h4></a>
                                     <a href="/online-enquiry"><h4>Online Enquiry</h4></a>
-                                    <a href="/student-services"><h4>Student Services</h4></a>
+                                    {/* <a href="/student-services"><h4>Student Services</h4></a>
                                     <a href="/employment"><h4>Employment</h4></a>
-                                    <a href="/policy-manual"><h4>Policy Manual</h4></a>
+                                    <a href="/policy-manual"><h4>Policy Manual</h4></a> */}
                                 </div>
                                 <div className="item2">
                                     <h4>Contact</h4>

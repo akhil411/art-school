@@ -41,7 +41,7 @@ class Dashboard extends Component {
                         </div>
                         <div>
                             <Link to="/dashboard/account">
-                                <h5>Account</h5>
+                                <button className="modal-call-button"><span>Account </span></button>
                             </Link>
                         </div>
                         <button className="modal-call-button" type="submit" value="Submit" onClick={this.onLogoutClick}><span>Logout </span></button>

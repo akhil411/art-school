@@ -72,8 +72,6 @@ class Posts extends Component {
 	}
 
 	singleFileUploadHandler = () => {
-		console.log(this.state.selectedFile)
-		console.log(this.state.selectedFile.name)
 		const data = new FormData();
 		// If file selected
 		if (this.state.selectedFile) {
@@ -100,7 +98,6 @@ class Posts extends Component {
 						} else {
 							// Success
 							let imageDetails = response.data;
-							console.log('fileName', imageDetails);
 							this.createPost(imageDetails);
 							//  this.ocShowAlert( 'Filefi Uploaded', '#3089cf' );
 						}
@@ -278,9 +275,12 @@ class Posts extends Component {
 									{post.text}
 								</Typography>
 							</CardContent>
+							<hr className="individualPost-hr"></hr>
 							<CardActions disableSpacing>
-								<Like userId={this.props.userId} likes={post.likes} postId={post._id} />
-								<div onClick={() => this.clickComment(post._id)}>
+								<div className="like-component">
+									<Like userId={this.props.userId} likes={post.likes} postId={post._id} />
+								</div>
+								<div className="comment-component" onClick={() => this.clickComment(post._id)}>
 									<h6 className="comment-text" data-toggle="modal" data-target="#commentModalCenter">Comment</h6>
 								</div>
 							</CardActions>

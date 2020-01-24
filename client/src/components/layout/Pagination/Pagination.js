@@ -59,27 +59,27 @@ class Pagination extends React.Component {
         // default to first page
         currentPage = currentPage || 1;
 
-        // default page size is 5
-        pageSize = pageSize || 5;
+        // default page size is 10
+        pageSize = pageSize || 10;
 
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
 
         var startPage, endPage;
-        if (totalPages <= 5) {
-            // less than 5 total pages so show all
+        if (totalPages <= 10) {
+            // less than 10 total pages so show all
             startPage = 1;
             endPage = totalPages;
         } else {
-            // more than 5 total pages so calculate start and end pages
+            // more than 10 total pages so calculate start and end pages
             if (currentPage <= 6) {
                 startPage = 1;
-                endPage = 5;
+                endPage = 10;
             } else if (currentPage + 4 >= totalPages) {
                 startPage = totalPages - 9;
                 endPage = totalPages;
             } else {
-                startPage = currentPage - 5;
+                startPage = currentPage - 10;
                 endPage = currentPage + 4;
             }
         }

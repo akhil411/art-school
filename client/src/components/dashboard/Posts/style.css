@@ -33,3 +33,26 @@
     max-height: 400px;
     overflow: auto;
 }
+
+.individualPost-hr {
+    border-top: 1px solid darkgray;
+    width: 98%;
+    margin-top: 0 !important;
+    margin-bottom:0 !important;
+}
+
+.like-component, .comment-component {
+    width: 50%;
+}
+
+.like-section, .comment-text {
+    margin: auto;
+}
+
+.comment-text {
+    width: 130px
+}
+
+.comment-component {
+    margin-bottom: 8px;
+}

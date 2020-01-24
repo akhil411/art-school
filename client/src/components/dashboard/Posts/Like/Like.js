@@ -52,7 +52,7 @@ class Like extends Component {
 
         return (
             <div className="like-section">
-                <div className="like-button" onClick={this.onClick}><img src={(this.state.liked ? '../assets/images/liked.png' : '../assets/images/like.png')}></img>  </div>
+                <div className="like-button" onClick={this.onClick}>{(this.state.liked ? <i class="fa fa-thumbs-up" style={{ fontSize:'20px', color:'red' }}></i> : <i class="fa fa-thumbs-up" style={{ fontSize:'20px' }}></i> )}</div>
                 <h6 onClick={this.likeOnClick} className="like-text" data-toggle="modal" data-target="#likeModalCenter">{this.state.likeCount} Likes</h6>
             </div>
         )
