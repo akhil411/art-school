@@ -3,7 +3,7 @@ import API from './../utils/API';
 import classnames from "classnames";
 import TextField from '@material-ui/core/TextField';
 import Snackbar from '@material-ui/core/Snackbar';
-import Footer from './../components/Footer/Footer'
+import Footer from './../components/Footer/Footer';
 
 class Enquiry extends Component {
     state = {
@@ -13,7 +13,7 @@ class Enquiry extends Component {
         subject: '',
         description: '',
         errors: {},
-        submitSuccess: false
+        submitSuccess: false,
     };
 
     handleInputChange = (event) => {

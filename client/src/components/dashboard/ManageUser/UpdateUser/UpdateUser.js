@@ -77,7 +77,6 @@ class UpdateUser extends Component {
 						))}
 					</table>
 				</div>
-				{/* <UserTable users={this.state.users} /> */}
 				<Pagination items={this.state.users} onChangePage={this.onChangePage} />
 			</div>
 		);
