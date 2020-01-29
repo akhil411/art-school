@@ -117,10 +117,6 @@
     .chatRoomContainer .chatform .MuiInput-formControl {
         width: 170px !important;
     }
-
-    .page-heading {
-        margin: unset;
-    }
     .enquiry-container h1, .grid-block-left .page-heading, .location-map iframe {
         width: 250px !important;
     }

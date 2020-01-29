@@ -35,7 +35,6 @@ class Like extends Component {
     }
 
     likeOnClick = () => {
-        console.log(this.props.postId)
         API.getLikes(this.props.postId)
             .then(res => {
                 this.setState({ likes: res.data.likes.like });

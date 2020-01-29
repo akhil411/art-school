@@ -49,6 +49,9 @@ export default {
     submitEnquiry: function (enquiry) {
         return axios.post("/api/enquiry/enquiry", enquiry);
     },
+    submitResume: function (resume) {
+        return axios.post("/api/resume/resume", resume);
+    }, 
     getEnquiry: function () {
         return axios.get("/api/enquiry/enquiry");
     },

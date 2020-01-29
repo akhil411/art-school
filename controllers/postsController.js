@@ -1,6 +1,7 @@
 const db = require("../models");
 const axios = require("axios");
 const validatePostInput = require("../validation/posts");
+const validateCommentInput = require("../validation/comment");
 const moment = require("moment-timezone");
 
 // Defining methods for the booksController
@@ -67,7 +68,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   setComment: function (req, res) {
-    console.log(req.body);
+    const { errors, isValid } = validateCommentInput(req.body);
+    // Check validation
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
     db.Posts
       .update({ _id: req.body.postId }, {
         $push: { 'comments.comment': { 'text': req.body.comment, 'user': req.body.user } }

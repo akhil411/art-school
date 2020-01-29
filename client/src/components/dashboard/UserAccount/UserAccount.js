@@ -50,7 +50,7 @@ class UserAccount extends Component {
                                         <Tabs>
                                             <TabList>
                                                 <Tab>Register User</Tab>
-                                                <Tab>Update User</Tab>
+                                                <Tab>Users List</Tab>
                                                 <Tab>Announcements</Tab>
                                                 <Tab>Online Enquiry</Tab>
                                                 <Tab>Submit Report</Tab>

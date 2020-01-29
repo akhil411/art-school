@@ -6,14 +6,13 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Like from './Like/Like';
 import API from './../../../utils/API';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Snackbar from '@material-ui/core/Snackbar';
+import TextField from '@material-ui/core/TextField';
 
 class Posts extends Component {
 	constructor() {
@@ -146,10 +145,12 @@ class Posts extends Component {
 		e.preventDefault();
 		API.setComment({ user: this.props.userId, postId: this.state.commentPostId, comment: this.state.comment })
 			.then(res => {
-				this.setState({ comment: "" })
+				this.setState({ comment: "", errors: "" })
 				this.loadComments(this.state.commentPostId);
 			})
-			.catch(err => console.log(err));
+			.catch(err => {
+				this.setState({ errors: err.response.data })
+			});
 	}
 
 	clickComment = (postId) => {
@@ -183,6 +184,7 @@ class Posts extends Component {
 					<div className="modal-dialog modal-dialog-centered" role="document">
 						<div className="modal-content modal-likes-content">
 							<div className="modal-header">
+								<p style={{ 'margin':'0', 'fontWeight': 'bold' }}>Likes</p>
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -196,6 +198,7 @@ class Posts extends Component {
 					<div className="modal-dialog modal-dialog-centered" role="document">
 						<div className="modal-content">
 							<div className="modal-header">
+								<p style={{ 'margin':'0', 'fontWeight': 'bold' }}>Comments	</p>
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
@@ -204,8 +207,17 @@ class Posts extends Component {
 							</div>
 							<div className="comment-input-box">
 								<form onSubmit={this.submitComment}>
-									<input placeholder="Add Comment" type="text" value={this.state.comment} onChange={this.inputCommentChange}></input>
-									<button>Submit</button>
+									<TextField 
+										label="Add Comment" 
+										type="text" 
+										value={this.state.comment} 
+										onChange={this.inputCommentChange}
+									/>
+									<button className="modal-call-button">Submit</button>
+									<br></br>
+									<span className="red-text">
+										{errors.comment}
+									</span>
 								</form>
 							</div>
 						</div>
@@ -252,11 +264,6 @@ class Posts extends Component {
 							<CardHeader
 								avatar={
 									<Avatar aria-label="recipe" className="avatar">{post.user.name.charAt(0).toUpperCase()}</Avatar>
-								}
-								action={
-									<IconButton aria-label="settings">
-										<MoreVertIcon />
-									</IconButton>
 								}
 								title={post.user.name}
 								subheader={post.created}

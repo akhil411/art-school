@@ -88,17 +88,15 @@ class Navbar extends Component {
                                 <div className="item1">
                                     <a href="/courses"><h4>Courses</h4></a>
                                     <a href="/online-enquiry"><h4>Online Enquiry</h4></a>
-                                    {/* <a href="/student-services"><h4>Student Services</h4></a>
-                                    <a href="/employment"><h4>Employment</h4></a>
-                                    <a href="/policy-manual"><h4>Policy Manual</h4></a> */}
+                                    <a href="/send-resume"><h4>Send Resume</h4></a>
                                 </div>
                                 <div className="item2">
                                     <h4>Contact</h4>
                                     <p>1a, Castle Hill Road</p>
                                     <p>Castle HIll</p>
                                     <p>Sydney, NSW 2154</p>
-                                    <p><a className="modal-email-contact" href="tel:0469187261">Ph: 0469187261</a></p>
-                                    <p><a className="modal-email-contact" href="mailto:contact@hillsschoolsydney.com.au">Email: contact@hillsschoolsydney.com.au</a></p>
+                                    <p><a className="modal-email-contact" href="tel:0469187261">Ph: <span style={{'color': 'gold'}}>0469187261</span></a></p>
+                                    <a className="modal-email-contact" href="mailto:contact@hillsschoolsydney.com.au"><p>Email: <span style={{'color': 'gold'}}>akhilvijayan004@gmail.com</span></p></a>
                                     <br></br>
                                     <a href="tel:0469187261"><button className="modal-call-button"><span>Call </span></button></a>
                                 </div>

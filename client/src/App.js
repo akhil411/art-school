@@ -13,6 +13,7 @@ import NoMatch from "./pages/NoMatch";
 import Courses from "./pages/Courses";
 import Enquiry from "./pages/OnlineEnquiry";
 import Account from './pages/Account';
+import Resume from './pages/Resume';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
@@ -51,6 +52,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/courses" component={Courses} />
               <Route exact path="/online-enquiry" component={Enquiry} />
+              <Route exact path="/send-resume" component={Resume} />
               <PrivateRoute exact path="/dashboard" component={UserDashboard} />
               <PrivateRoute exact path="/dashboard/account" component={Account} />
               <Route path="*"><NoMatch /></Route>

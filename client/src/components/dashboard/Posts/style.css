@@ -56,3 +56,10 @@
 .comment-component {
     margin-bottom: 8px;
 }
+
+.comment-input-box .modal-call-button {
+    background-color: white; 
+    border: 1px solid black;
+    color: black;
+    width: 110px;
+}

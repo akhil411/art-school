@@ -56,3 +56,11 @@
     color: darkblue !important;
     font-size: 20px
 }
+
+.MuiBreadcrumbs-ol a {
+    color: black !important;
+}
+
+.MuiBreadcrumbs-ol p {
+    color: mediumblue !important;
+}
