@@ -58,17 +58,12 @@ class Enquiry extends Component {
             });
     }
 
-    deleteId = (id) => {
-        this.setState({ deleteId: id })
-    }
-
-    deleteAnnouncement = () => {
-        API.deleteAnnouncement(this.state.deleteId)
-            .then(res =>
-                this.setState({ deleteSuccess: true }, () => {
-                    window.location.reload();
-                })
-            )
+    deleteAnnouncement = (id) => {
+        API.deleteAnnouncement(id)
+            .then(res => {
+                this.setState({ deleteSuccess: true });
+                this.loadAnnouncements();
+            })
             .catch(err => console.log(err));
     }
 
@@ -97,7 +92,7 @@ class Enquiry extends Component {
                         <TextField
                             name="announcement"
                             type="text"
-                            label="Announcement"
+                            label="Announcement*"
                             value={this.state.announcement}
                             error={errors.announcement}
                             onChange={this.handleInputChange}
@@ -130,10 +125,8 @@ class Enquiry extends Component {
                                     <p><strong>Created By:</strong> {data.user}</p>
                                     <p><strong>Created On: </strong>{data.created}</p>
                                     <button className="modal-call-button delete-announcement"
-                                        data-toggle="modal"
-                                        data-target="#deleteModalCenter"
                                         type="submit"
-                                        onClick={() => this.deleteId(data._id)}>
+                                        onClick={() => this.deleteAnnouncement(data._id)}>
                                         <span>Delete</span>
                                     </button>
                                 </Typography>
@@ -143,21 +136,6 @@ class Enquiry extends Component {
                 </div>
                 <div className="announcements-pagination">
                     <Pagination items={this.state.announcements} onChangePage={this.onChangePage} />
-                </div>
-                <div className="modal fade" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="likeModalCenterTitle" aria-hidden="true">
-                    <div className="modal-dialog modal-dialog-centered" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div className="modal-body">
-                                <p className="delete-message">Are you sure you want to delete</p>
-                                <button className="modal-call-button delete-announcement" onClick={this.deleteAnnouncement}> <span>Delete</span></button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <Snackbar
                     open={this.state.submitSuccess}

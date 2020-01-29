@@ -79,7 +79,7 @@ class Resume extends Component {
                                     <TextField
                                         name="email"
                                         type="text"
-                                        label="Your Email"
+                                        label="Your Email*"
                                         value={this.state.email}
                                         error={errors.email}
                                         onChange={this.handleInputChange}

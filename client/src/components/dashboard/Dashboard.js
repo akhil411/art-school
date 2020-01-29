@@ -37,7 +37,7 @@ class Dashboard extends Component {
                             <Avatar className="avatar-icon">{user.name.charAt(0).toUpperCase()}{user.name.charAt(1).toUpperCase()}</Avatar>
                         </div>
                         <div className="user-name">
-                            <h4>Hi, {user.name.split(" ")[0]}</h4>
+                            <h4>Hi {user.name.split(" ")[0]}</h4>
                         </div>
                         <div>
                             <Link to="/dashboard/account">

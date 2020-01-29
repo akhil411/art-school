@@ -8,7 +8,7 @@ function Footer() {
       <a href="https://github.com/akhil411" target="_blank"><img src="../assets/images/github-icon.png"></img></a>
       <a href="https://linkedin.com/in/akhilvijayan411" target="_blank"><img src="../assets/images/linkedin-icon.png"></img></a>
       <a href="https://akhil411.github.io/" target="_blank"><img src="../assets/images/profile-icon.png"></img></a>
-      <a href="https://akhil411.github.io/" target="_blank"><img src="../assets/images/resume-icon.png"></img></a>
+      <a href="https://akhil411.github.io/assets/Akhil-Vijayan-Resume.pdf" target="_blank"><img src="../assets/images/resume-icon.png"></img></a>
     </div>
   )
 }

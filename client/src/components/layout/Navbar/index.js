@@ -91,11 +91,11 @@ class Navbar extends Component {
                                 </div>
                                 <div className="item2">
                                     <h4>Contact</h4>
-                                    <p>1a, Castle Hill Road</p>
+                                    <p>1A, Castle Hill Road</p>
                                     <p>Castle HIll</p>
                                     <p>Sydney, NSW 2154</p>
                                     <p><a className="modal-email-contact" href="tel:0469187261">Ph: <span style={{'color': 'gold'}}>0469187261</span></a></p>
-                                    <a className="modal-email-contact" href="mailto:contact@hillsschoolsydney.com.au"><p>Email: <span style={{'color': 'gold'}}>akhilvijayan004@gmail.com</span></p></a>
+                                    <a className="modal-email-contact" href="mailto:akhilvijayan004@gmail.com"><p>Email: <span style={{'color': 'gold'}}>akhilvijayan004@gmail.com</span></p></a>
                                     <br></br>
                                     <a href="tel:0469187261"><button className="modal-call-button"><span>Call </span></button></a>
                                 </div>

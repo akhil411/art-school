@@ -24,7 +24,8 @@ class SubmitReport extends Component {
             comments: '',
             submitSuccess: false,
             reports: [],
-            deleteId: ''
+            deleteId: '',
+            deleteSuccess: false,
         }
     }
 
@@ -85,15 +86,12 @@ class SubmitReport extends Component {
             });
     }
 
-    deleteId = (id) => {
-        this.setState({ deleteId: id })
-    }
-
-    deleteReport = () => {
-        API.deleteReport(this.state.deleteId)
-            .then(res =>
-                window.location.reload()
-            )
+    deleteReport = (id) => {
+        API.deleteReport(id)
+            .then(res => {
+                this.setState({ deleteSuccess: true });
+                this.loadReports();
+            })
             .catch(err => console.log(err));
     }
 
@@ -101,7 +99,7 @@ class SubmitReport extends Component {
         if (reason === 'clickaway') {
             return;
         }
-        this.setState({ submitSuccess: false })
+        this.setState({ submitSuccess: false, deleteSuccess: false })
     };
 
     render() {
@@ -146,7 +144,7 @@ class SubmitReport extends Component {
                             <TextField
                                 name="marks"
                                 type="text"
-                                label="Marks"
+                                label="Marks*"
                                 value={this.state.marks}
                                 error={errors.marks}
                                 onChange={this.handleInputChange}
@@ -162,7 +160,7 @@ class SubmitReport extends Component {
                             <TextField
                                 name="comments"
                                 type="text"
-                                label="Comments"
+                                label="Comments*"
                                 value={this.state.comments}
                                 error={errors.comments}
                                 onChange={this.handleInputChange}
@@ -205,10 +203,8 @@ class SubmitReport extends Component {
                                         <p><strong>Comments : </strong>{data.comments}</p>
                                         <p><strong>Created On : </strong>{data.created}</p>
                                         <button className="modal-call-button delete-announcement"
-                                            data-toggle="modal"
-                                            data-target="#deleteModalCenter"
                                             type="submit"
-                                            onClick={() => this.deleteId(data._id)}>
+                                            onClick={() => this.deleteReport(data._id)}>
                                             <span>Delete</span>
                                         </button>
                                     </Typography>
@@ -216,23 +212,13 @@ class SubmitReport extends Component {
                             </ExpansionPanel>
                         ))}
                     </div>
-                    <div className="modal fade" id="deleteModalCenter" role="dialog" aria-labelledby="likeModalCenterTitle" aria-hidden="true">
-                        <div className="modal-dialog modal-dialog-centered" role="document">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div className="modal-body">
-                                    <p className="delete-message">Are you sure you want to delete</p>
-                                    <button className="modal-call-button delete-announcement" onClick={this.deleteReport}> <span>Delete</span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Snackbar
+                        open={this.state.deleteSuccess}
+                        autoHideDuration={3000}
+                        onClose={this.handleClose}
+                        message="&#10004; Report Successfully Deleted"
+                    />
                 </div>
-
             </div>
         );
     }

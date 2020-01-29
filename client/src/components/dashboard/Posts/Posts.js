@@ -207,7 +207,7 @@ class Posts extends Component {
 							<div className="comment-input-box">
 								<form onSubmit={this.submitComment}>
 									<TextField 
-										label="Add Comment" 
+										label="Add Comment*" 
 										type="text" 
 										value={this.state.comment} 
 										onChange={this.inputCommentChange}

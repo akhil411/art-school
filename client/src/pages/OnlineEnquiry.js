@@ -85,7 +85,7 @@ class Enquiry extends Component {
                                     <TextField
                                         name="email"
                                         type="text"
-                                        label="Your Email"
+                                        label="Your Email*"
                                         value={this.state.email}
                                         error={errors.email}
                                         onChange={this.handleInputChange}
@@ -101,7 +101,7 @@ class Enquiry extends Component {
                                     <TextField
                                         name="contactNumber"
                                         type="text"
-                                        label="Your Best Contact Number"
+                                        label="Your Best Contact Number*"
                                         value={this.state.contactNumber}
                                         error={errors.contactNumber}
                                         onChange={this.handleInputChange}
@@ -117,7 +117,7 @@ class Enquiry extends Component {
                                     <TextField
                                         name="subject"
                                         type="text"
-                                        label="Subject of the Enquiry"
+                                        label="Subject of the Enquiry*"
                                         value={this.state.subject}
                                         error={errors.subject}
                                         onChange={this.handleInputChange}
@@ -133,7 +133,7 @@ class Enquiry extends Component {
                                     <TextField
                                         name="description"
                                         type="textarea"
-                                        label="More Details"
+                                        label="More Details*"
                                         value={this.state.description}
                                         error={errors.description}
                                         onChange={this.handleInputChange}
@@ -162,11 +162,11 @@ class Enquiry extends Component {
                             </div>
                             <div className="item2 enquiry-contact">
                                 <h4>Contact</h4>
-                                <p>1a, Castle Hill Road</p>
+                                <p>1A, Castle Hill Road</p>
                                 <p>Castle HIll</p>
                                 <p>Sydney, NSW 2154</p>
                                 <p><a className="modal-email-contact" href="tel:0469187261">Ph: 0469187261</a></p>
-                                <p><a className="modal-email-contact" href="mailto:contact@hillsschoolsydney.com.au">Email: contact@hillsschoolsydney.com.au</a></p>
+                                <p><a className="modal-email-contact" href="mailto:akhilvijayan004@gmail.com">Email: akhilvijayan004@gmail.com</a></p>
                                 <br></br>
                                 <a href="tel:0469187261"><button className="modal-call-button"><span>Call </span></button></a>
                             </div>

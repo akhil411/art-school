@@ -80,7 +80,7 @@ class Report extends Component {
                             <TextField
                                 name="newPassword1"
                                 type="password"
-                                label="New Password"
+                                label="New Password*"
                                 value={this.state.newPassword1}
                                 error={errors.newPassword1}
                                 onChange={this.handleInputChange}
@@ -96,7 +96,7 @@ class Report extends Component {
                             <TextField
                                 name="newPassword2"
                                 type="password"
-                                label="Confirm Password"
+                                label="Confirm Password*"
                                 value={this.state.newPassword2}
                                 error={errors.newPassword2}
                                 onChange={this.handleInputChange}

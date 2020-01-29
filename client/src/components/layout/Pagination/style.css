@@ -10,7 +10,7 @@
 }
 
 .pagination .active {
-    background-color: greenyellow;
+    border: 1px solid black !important;
 }
 
 .pagination .disabled:hover {
