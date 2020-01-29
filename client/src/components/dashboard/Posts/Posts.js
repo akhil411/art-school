@@ -60,7 +60,8 @@ class Posts extends Component {
 		const imageUrl = imageDetails ? imageDetails.location : null;
 		API.createPosts({ text: this.state.text, user: this.props.userId, name: imageName, url: imageUrl })
 			.then(res => {
-				this.setState({ text: "", errors: "", submitSuccess: true, skip: 0, posts: [] }, () => {
+				this.setState({ text: "", errors: "", selectedFile: "", submitSuccess: true, skip: 0, posts: [] }, () => {
+					this.fileInput.value = "";
 					this.loadPosts(this.state.skip);
 				});
 
@@ -231,7 +232,7 @@ class Posts extends Component {
 									{errors.text}
 								</span>
 								<hr></hr>
-								<input onChange={this.onFileChange} type="file" name="pic" accept="image/*"></input>
+								<input onChange={this.onFileChange} ref={ref=> this.fileInput = ref} type="file" name="pic" accept="image/*"></input>
 								<span className="red-text">
 									{errors.error}
 								</span>
