@@ -6,6 +6,7 @@
 .information-content .react-tabs__tab {
     border-radius: none;
     border: none;
+    font-size: 30px;
 }
 
 .information-content .react-tabs__tab--selected {
@@ -14,8 +15,6 @@
     border-radius: 0;
     background-color: rgb(37, 24, 24);
     filter: opacity(0.9);
-    font-size: 30px;
-
 }
 
 .information-content .react-tabs__tab-list {

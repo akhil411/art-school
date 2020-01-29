@@ -34,8 +34,6 @@ class UpdateUser extends Component {
 	loadUsers = (role_id) => {
 		API.getUserType(role_id)
 			.then(res => {
-				console.log(res.data)
-
 				this.setState({ users: res.data })
 			})
 			.catch(err => console.log(err));

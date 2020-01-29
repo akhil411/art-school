@@ -130,7 +130,6 @@ class Posts extends Component {
 	loadComments = (postId) => {
 		API.loadComments(postId)
 			.then(res => {
-				console.log(res)
 				this.setState({ showcomment: res.data.comments.comment });
 				var commentModal = document.getElementsByClassName("modal-comment-body")[0];
 				commentModal.innerHTML = "";

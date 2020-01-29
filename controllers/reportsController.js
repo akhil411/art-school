@@ -38,7 +38,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   getStudentReports: function (req, res) {
-    console.log(req.params.id)
     db.Reports
       .find({ studentId: req.params.id })
       .populate({ path: 'teacherId', model: User })

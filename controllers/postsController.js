@@ -59,7 +59,6 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   getLikes: function (req, res) {
-    console.log(req.params.id)
     db.Posts
       .findById(req.params.id)
       .populate('likes.like')

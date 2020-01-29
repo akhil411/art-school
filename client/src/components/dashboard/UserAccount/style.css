@@ -51,10 +51,8 @@
 
 .manage-website-wrapper .react-tabs__tab--selected {
     border-color:white;
-    font-size: 25px;
     font-weight: bold;
     color: darkblue !important;
-    font-size: 20px
 }
 
 .MuiBreadcrumbs-ol a {

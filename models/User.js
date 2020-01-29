@@ -36,7 +36,6 @@ User.find({ name: "admin" })
       Admin.save();
       Roles.find({ name: "admin" })
         .then(function (data) {
-          console.log(data[0])
           return (
             User.updateOne({ name: "admin" }, { role: data[0]._id })
           )

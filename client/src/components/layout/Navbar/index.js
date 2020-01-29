@@ -34,7 +34,6 @@ class Navbar extends Component {
         API.getNews()
             .then(res => {
                 this.setState({ news: res.data })
-                console.log(res.data)
             }
             )
             .catch(err => console.log(err));
