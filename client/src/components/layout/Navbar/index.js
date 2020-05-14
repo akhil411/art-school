@@ -87,7 +87,7 @@ class Navbar extends Component {
                                 <div className="item1">
                                     <a href="/courses"><h4>Courses</h4></a>
                                     <a href="/online-enquiry"><h4>Online Enquiry</h4></a>
-                                    <a href="/send-resume"><h4>Send Resume</h4></a>
+                                    {/* <a href="/send-resume"><h4>Send Resume</h4></a> */}
                                 </div>
                                 <div className="item2">
                                     <h4>Contact</h4>
